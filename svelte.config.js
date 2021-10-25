@@ -1,5 +1,3 @@
-import { mdsvex } from "mdsvex";
-import mdsvexConfig from "./mdsvex.config.js";
 import adapter from '@sveltejs/adapter-netlify'
 
 const config = {
@@ -13,8 +11,6 @@ const config = {
 			entries: ['*'],
 		},
 	},
-	extensions: [".svelte", ...mdsvexConfig.extensions],
-	preprocess: [mdsvex(mdsvexConfig)]
 };
 
 export default config;
