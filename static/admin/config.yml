@@ -9,6 +9,9 @@ collections:
     fields:
       
       # Detalhes informativos
+      - label: "Título"
+        name: "titulo"
+        widget: "string"
       - {label: "Disponível?", name: "disponibilidade", widget: "boolean", default: true}
       - label: "Localização"
         name: "location"
