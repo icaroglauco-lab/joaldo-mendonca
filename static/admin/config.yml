@@ -97,11 +97,11 @@ collections:
                   widget: "number"
                   value_type: "int"
                   min: 1
-              - label: "Parcelas de até (parcelamento máximo em R$)"
-                name: "pacelamento_valor_limite"
-                widget: "number"
-                required: false
-                value_type: "float"
+                - label: "Valor da parcela em R$"
+                  name: "pacelamento_valor"
+                  widget: "number"
+                  required: false
+                  value_type: "float"
 
 
       # Organização 
