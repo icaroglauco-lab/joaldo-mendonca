@@ -13,7 +13,7 @@ collections:
       - label: "Localização"
         name: "location"
         widget: "map"
-        default: "{\"type\": \"Point\",\"coordinates\": [125.6, 10.1]}"
+        default: "{ \"type\": \"Point\",\"coordinates\": [-40.8427477,-14.8519483]}"
       - label: "Quantidade disponível"
         name: "qnt"
         widget: "number"
