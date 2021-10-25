@@ -8,8 +8,8 @@
 <div class="m-auto max-w-6xl p-12">
    <div class="flex flex-col md:flex-row">
       <div class="md:w-1/2 max-w-md flex flex-col justify-center">
-         <div class="md:text-5xl text-2xl uppercase font-black">Awesome tool for your future team</div>
-         <div class="text-xl mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+         <div class="md:text-5xl text-2xl uppercase font-black">Joaldo Mendonça. Corretor de Imóveis</div>
+         <div class="text-xl mt-4">Minha missão é trazer .</div>
          <div class="my-5 h-16">
             <div class="shadow-md font-medium py-2 px-4 text-yellow-100
                cursor-pointer bg-primaria hover:bg-yellow-500 rounded text-lg text-center w-48">Join us now</div>
