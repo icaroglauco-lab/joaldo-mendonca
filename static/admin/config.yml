@@ -10,7 +10,10 @@ collections:
       
       # Detalhes informativos
       - {label: "Disponível?", name: "disponibilidade", widget: "boolean", default: true}
-      - {label: "Localização", name: "location", widget: "map", default: "[125.6, 10.1]" }
+      - label: "Localização"
+        name: "location"
+        widget: "map"
+        default: "{\"type\": \"Point\",\"coordinates\": [125.6, 10.1]}"
       - label: "Quantidade disponível"
         name: "qnt"
         widget: "number"
