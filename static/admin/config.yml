@@ -28,7 +28,7 @@ collections:
         widget: "list"
         required: false
         allow_add: true
-        fields: [{label: "Foto", widget: "image", choose_url: true, default: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=773&q=80", media_library: {config: {multiple: true}}}]
+        fields: [{label: "Foto", name: "foto", widget: "image", choose_url: true, default: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=773&q=80", media_library: {config: {multiple: true}}}]
     
 
       # Parcelamento
