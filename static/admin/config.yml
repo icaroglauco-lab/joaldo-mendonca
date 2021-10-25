@@ -41,6 +41,7 @@ collections:
           # Venda
           - label: "Venda de propriedade"
             name: "venda"
+            required: false
             widget: "object"
             fields:
               - label: "Contrato (valor em R$)"
@@ -55,6 +56,7 @@ collections:
           # Aluguel
           - label: "Aluguel"
             name: "aluguel"
+            required: false
             widget: "object"
             fields:
               - label: "Valor mensal (valor em R$)"
@@ -73,6 +75,7 @@ collections:
           # Lote
           - label: "Loteamento"
             name: "loteamento"
+            required: false
             widget: "object"
             fields:
               - label: "Preço a vista (valor em R$)"
