@@ -41,51 +41,55 @@ collections:
           # Venda
           - label: "Venda de propriedade"
             name: "venda"
-            required: false
             widget: "object"
             fields:
               - label: "Contrato (valor em R$)"
                 name: "contrato"
+                required: false
                 widget: "number"
                 value_type: "float"
               - label: "Disponibilidade (data)"
                 name: "disponivel_em"
+                required: false
                 widget: "datetime"
                 date_format: "DD.MM.YYYY"
                 picker_utc: false
           # Aluguel
           - label: "Aluguel"
             name: "aluguel"
-            required: false
             widget: "object"
             fields:
               - label: "Valor mensal (valor em R$)"
                 name: "mensal"
+                required: false
                 widget: "number"
                 value_type: "float"
               - label: "Contrato (valor em R$)"
                 name: "contrato"
+                required: false
                 widget: "number"
                 value_type: "float"
               - label: "Disponibilidade (data)"
                 name: "disponivel_em"
+                required: false
                 widget: "datetime"
                 date_format: "DD.MM.YYYY"
                 picker_utc: false
           # Lote
           - label: "Loteamento"
             name: "loteamento"
-            required: false
             widget: "object"
             fields:
               - label: "Preço a vista (valor em R$)"
                 name: "price"
+                required: false
                 widget: "number"
                 value_type: "float"
 
               - label: "Plano de parcelamento"
                 name: "parcelas_plano"
                 widget: "list"
+                required: false
                 allow_add: true
                 fields:
                 - label: "Número de parcelas"
@@ -96,6 +100,7 @@ collections:
               - label: "Parcelas de até (parcelamento máximo em R$)"
                 name: "pacelamento_valor_limite"
                 widget: "number"
+                required: false
                 value_type: "float"
 
 
