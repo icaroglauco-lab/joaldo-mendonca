@@ -4,8 +4,11 @@ backend:
 collections:
   - name: propriedades
     label: Propriedades
-    folder: static/propriedades
+    folder: src/propriedades
     create: true
+    identifier_field: titulo
+    extension: json
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     fields:
       
       # Detalhes informativos
