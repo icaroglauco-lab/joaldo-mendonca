@@ -25,7 +25,7 @@
     
   </div>
   <div class="container col-span-4 mx-auto w-5/6
-   p-2  items-start flex flex-wrap space-x-5 ">
+   p-2  items-start flex flex-wrap space-x-5 justify-evenly ">
     {#each data_filtered as p, i}
     	<Produto order={i} data={p}/>
     {/each}
