@@ -7,6 +7,9 @@ export function get() {
             {encoding:'utf8', flag:'r'}));
             return f;
         });
-    return data 
+    return {
+    	body: data,
+    	status: 200
+    }
   }
   
