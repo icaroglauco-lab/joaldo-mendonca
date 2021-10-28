@@ -10,6 +10,7 @@
 
 <script type="text/javascript">
 	import Produto from '../componentes/product.svelte'
+  import BarraBuscar from '../componentes/barra_busca.svelte'
 
 	export let data;
 
@@ -18,7 +19,20 @@
   $: data_filtered = filters.reduce((data_atual, filtro_atual) => {
     return filtro_atual(data_atual)
   } ,data)
+
+  const add_filter = (filter) => {
+    filters.push(filter);
+    console.log(filters);
+  }
+
+  const clear_filters = () => {
+    filters = []
+  }
+
 </script>
+
+
+<BarraBuscar data={data_filtered} add={add_filter} clear={clear_filters} />
 
 <div class="container grid-cols-5 flex">
   <div class="col-span-1">

@@ -8,5 +8,8 @@ module.exports = {
         'secundaria': '#004aad'
       }
     }
-  }
+  },
+  plugins: [
+    require('daisyui'),
+  ]
 }
