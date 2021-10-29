@@ -1,6 +1,7 @@
-<script type="text/javascript">
+<script>	
 	export let data;
 	export let add;
+	export let reverse;
 	export let clear;
 
 	$: localizações = [... new Set(data.map(item => item["loc_name"]))];
@@ -8,9 +9,8 @@
 
 	let reverso = false;
 
-	const reverse = () => {
-		add( data => data.reverse() )
-	}
+	$: reverse(reverso)
+	
 </script>
 
 <div class="btn-group mx-auto justify-center w-max flex-nowrap">

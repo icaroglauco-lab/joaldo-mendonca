@@ -8,7 +8,7 @@
   }
 </script>
 
-<script type="text/javascript">
+<script>
 	import Produto from '../componentes/product.svelte'
   import BarraBuscar from '../componentes/barra_busca.svelte'
 
@@ -29,10 +29,14 @@
     filters = []
   }
 
+  const reverse = (flag) => {
+    filters[0] = (data) => data.reverse()
+  }
+
 </script>
 
 
-<BarraBuscar data={data_filtered} add={add_filter} clear={clear_filters} />
+<BarraBuscar data={data_filtered} add={add_filter} clear={clear_filters} reverse={reverse} />
 
 <div class="container grid-cols-5 flex">
   <div class="col-span-1">
