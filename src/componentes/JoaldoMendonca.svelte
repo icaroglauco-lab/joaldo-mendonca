@@ -10,16 +10,10 @@
 </style>
 
 <section class="m-auto max-w-6xl p-24">
-   <div class="flex flex-col md:flex-row">
+   <div class="flex flex-col md:flex-row space-x-28">
       <div class="md:w-1/2 max-w-md flex flex-col justify-center">
-         <div class="md:text-5xl text-2xl uppercase font-black">Joaldo Mendonça. Corretor de Imóveis</div>
+         <div class="md:text-5xl text-2xl uppercase font-black">Conheça Joaldo Mendonça, seu corretor de imóveis</div>
          <div class="text-xl mt-4" data-aos="zoom-out" data-aos-delay="300" data-aos-duration="1500">Minha missão é trazer facilidade e qualidade em negócios para toda região.</div>
-         <div class="my-5 h-16">
-            <a href="/buscar">
-              <div class="shadow-md font-medium py-2 px-4 text-yellow-100
-               cursor-pointer bg-primaria hover:bg-yellow-500 rounded text-lg text-center w-48">Conheça nossas propriedades</div>
-            </a>
-         </div>
       </div>
       <div class="flex md:justify-end w-full md:w-1/2 -mt-5">
          <div class="bg-dots">

@@ -11,7 +11,7 @@
 
 </script>
 
-<div style={`background-color: rgba(200, 200, 200, ${opacity_check});`} class="navbar mb-2 bg-neutral text-neutral-content rounded-none">
+<div style={`opacity: ${opacity_check};`} class="navbar mb-2 bg-neutral text-neutral-content rounded-none">
     <div class="flex-1 px-2 mx-2">
         <span class="text-lg font-bold">
             <a href="/">

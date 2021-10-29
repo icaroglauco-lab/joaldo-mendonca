@@ -9,12 +9,14 @@
 </script>
 
 <script type="text/javascript">
-	import Hero from '../componentes/hero.svelte'
+	import Hero from '../componentes/JoaldoMendonca.svelte'
 	import ItemsContent from '../componentes/items.svelte'
+	import LandingHero from '../componentes/landingHero.svelte';
   	export let data;
 </script>
 
-<Hero/>
+	<LandingHero></LandingHero>
+	  
 
 <section>
 	<h2 class="text-3xl mx-auto text-center">
@@ -23,3 +25,4 @@
 	<ItemsContent data={data} maxitems={3}/>
 </section>
 
+<Hero/>
