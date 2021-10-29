@@ -3,7 +3,7 @@
     export let order;
 </script>
 
-<div class={` w-96 card shadow-xl relative ${order}`}>
+<div class={` w-96 card my-5 rounded-none shadow-xl relative ${order} `} data-aos="flip-left" data-aos-once="true">
 	<div class="topo absolute p-4 pl-1 w-full flex text-sm justify-between">
 		<div class="tags text-xs text-gray-600 flex">
 			{#each data.tags as tag}
@@ -12,16 +12,16 @@
 			</div>
 			{/each}
 		</div>
-		<div class="disponibilidade text-primaria text-xs text-white">
+		<div class="disponibilidade text-primaria text-xs">
 			{data.qnt} {data.qnt === 1? `disponível`: 'disponíveis'}
 		</div>
 	</div>
 	<figure class="h-64">
-		<img class="h-full" src={data.fotos[0].foto}/>
+		<img class="h-full" src={data.fotos[0].foto} alt=""/>
 	</figure>
 	<div class="card-body max-w-md card-body">
 		<div class="w-full flex pl-2 justify-between">
-			<div class="card-title text-2xl duration-300 transition-all hover:cursor-pointer border-white border-b-2 hover:border-gray-400 text-primaria mb-1.5">
+			<div class="card-title text-1xl duration-300 transition-all hover:cursor-pointer border-white border-b-2 hover:border-gray-400 text-primaria mb-1.5">
 				{data.titulo}
 			</div>
 			<div class="prize text-xs">

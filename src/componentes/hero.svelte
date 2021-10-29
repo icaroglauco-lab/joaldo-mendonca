@@ -9,11 +9,11 @@
   }
 </style>
 
-<div class="m-auto max-w-6xl p-12">
+<section class="m-auto max-w-6xl p-24">
    <div class="flex flex-col md:flex-row">
       <div class="md:w-1/2 max-w-md flex flex-col justify-center">
          <div class="md:text-5xl text-2xl uppercase font-black">Joaldo Mendonça. Corretor de Imóveis</div>
-         <div class="text-xl mt-4">Minha missão é trazer facilidade e qualidade em negócios para toda região.</div>
+         <div class="text-xl mt-4" data-aos="zoom-out" data-aos-delay="300" data-aos-duration="1500">Minha missão é trazer facilidade e qualidade em negócios para toda região.</div>
          <div class="my-5 h-16">
             <a href="/buscar">
               <div class="shadow-md font-medium py-2 px-4 text-yellow-100
@@ -24,10 +24,10 @@
       <div class="flex md:justify-end w-full md:w-1/2 -mt-5">
          <div class="bg-dots">
             <div class="shadow-2xl max-w-md z-10 rounded-full mt-6 ml-4">
-               <img alt="card img" class="rounded-t" src="/pp.jpeg"> 
+               <img alt="card img"  class="rounded-t" src="/pp.jpeg"> 
                <div class="text-2xl p-10 bg-white"><img alt="quote" id="joaldo" class="float-left mr-1" src="https://assets-global.website-files.com/5b5a66e9f3166b36708705fa/5cf8fb1f994fb7168d0d66fb_quote-intro.svg"> Ora, àquele que é poderoso para fazer tudo muito mais abundantemente além daquilo que pedimos ou pensamos, segundo o poder que em nós opera.</div>
             </div>
          </div>
       </div>
    </div>
-</div>
+</section>

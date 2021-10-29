@@ -9,43 +9,13 @@
 </script>
 
 <script>
-	import Produto from '../componentes/product.svelte'
-  import BarraBuscar from '../componentes/barra_busca.svelte'
-
-	export let data;
-
-  let filters = []
-
-  $: data_filtered = filters.reduce((data_atual, filtro_atual) => {
-    return filtro_atual(data_atual)
-  } ,data)
-
-  const add_filter = (filter) => {
-    filters.push(filter);
-    console.log(filters);
-  }
-
-  const clear_filters = () => {
-    filters = []
-  }
-
-  const reverse = (flag) => {
-    filters[0] = (data) => data.reverse()
-  }
-
+  import ItemsContent from '../componentes/items.svelte'
+  export let data;
 </script>
 
-
-<BarraBuscar data={data_filtered} add={add_filter} clear={clear_filters} reverse={reverse} />
-
-<div class="container grid-cols-5 flex">
-  <div class="col-span-1">
-    
-  </div>
-  <div class="container col-span-4 mx-auto w-5/6
-   p-2  items-start flex flex-wrap space-x-5 justify-evenly ">
-    {#each data_filtered as p, i}
-    	<Produto order={i} data={p}/>
-    {/each}
-  </div>
-</div>
+<section>
+  <h1 class="text-5xl bold mx-auto text-center">
+    Pesquise por propriedades disponíveis
+  </h1>
+  <ItemsContent data={data}/>
+</section>

@@ -22,6 +22,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"aos": "^2.3.4",
 		"daisyui": "^1.16.0",
 		"front-matter": "^4.0.2"
 	}
