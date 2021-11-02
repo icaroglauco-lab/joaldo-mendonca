@@ -10,8 +10,11 @@
 
 <script>
   import ItemsContent from '../componentes/items.svelte'
+  import CommonHero from "../componentes/common_hero.svelte";
   export let data;
 </script>
+
+<CommonHero/>
 
 <section>
   <h1 class="text-5xl bold mx-auto text-center">

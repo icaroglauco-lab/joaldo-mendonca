@@ -3,12 +3,18 @@
     <div class="text-center hero-content text-neutral-content">
       <div class="max-w-md">
         <h1 class="mb-5 text-5xl font-bold">
-              Hello there
-            </h1> 
-        <p class="mb-5">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.
-            </p> 
-        <button class="btn btn-primaria rounded-none">Vá rapidamente</button>
+          Joaldo Mendonça Imóveis.
+          <br/>
+          <br/>
+          Seja bem vindo
+        </h1> 
+        <a href="/buscar" class="btn btn-primaria rounded-none">E encontre seu imóvel dos sonhos</a>
       </div>
     </div>
   </div>
+
+  <style>
+    h1{
+      font-family: "Ruluko";
+    }
+  </style>

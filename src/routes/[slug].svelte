@@ -12,7 +12,9 @@
 <script>
   export let data;
   import Produto from '../componentes/product_single.svelte'
+  import CommonHero from '../componentes/common_hero.svelte';
 </script>
 
+<CommonHero />
 <Produto data={data}/>
 

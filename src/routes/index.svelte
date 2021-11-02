@@ -9,20 +9,19 @@
 </script>
 
 <script type="text/javascript">
-	import Hero from '../componentes/JoaldoMendonca.svelte'
+	import JoaldoMendoncaSec from '../componentes/JoaldoMendonca.svelte'
 	import ItemsContent from '../componentes/items.svelte'
-	import LandingHero from '../componentes/landingHero.svelte';
+	import LandingHeroSection from '../componentes/landingHero.svelte';
   	export let data;
 </script>
 
-	<LandingHero></LandingHero>
-	  
-
+<LandingHeroSection></LandingHeroSection>
+	
 <section>
 	<h2 class="text-3xl mx-auto text-center">
-		Algumas de nossas propriedades disponíveis
+		Aqui algumas de nossas propriedades disponíveis
 	</h2>
 	<ItemsContent data={data} maxitems={3}/>
 </section>
 
-<Hero/>
+<JoaldoMendoncaSec/>

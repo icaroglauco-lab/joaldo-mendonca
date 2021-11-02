@@ -1,8 +1,12 @@
 import fs from 'fs';
-let data = fs.readdirSync(`src/propriedades/`)
+let data = fs.readdirSync(`static/propriedades/`)
     .map(fileName => {
-        const f = JSON.parse(fs.readFileSync(`src/propriedades/${fileName}`,
-        {encoding:'utf8', flag:'r'}));
+        let slug = fileName.split('.');
+        slug.pop()
+        slug = slug.join('.')
+        const f = {
+            slug,
+            data: JSON.parse(fs.readFileSync(`static/propriedades/${fileName}`, {encoding:'utf8', flag:'r'}))};
         return f;
     });
 

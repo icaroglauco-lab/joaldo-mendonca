@@ -11,7 +11,7 @@
 
 <div class="col-span-1 w-96 space-y-4">
 	<div class="info">
-		<img src="pp.jpeg">
+		<img alt="profile" src="pp.jpeg">
 		<span class="nome"></span>
 		<span class="telefone"></span>
 		<span class="ende"></span>

@@ -1,5 +1,5 @@
 module.exports = {
-  darkMode: false,
+  darkMode: 'media',
   purge: ['./src/**/*.svelte'],
   theme: {
     extend: {
