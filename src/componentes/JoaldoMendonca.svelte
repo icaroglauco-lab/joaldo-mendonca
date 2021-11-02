@@ -11,7 +11,7 @@
 
 <section class="m-auto max-w-6xl p-24">
    <div class="flex flex-col md:flex-row space-x-28">
-      <div class="md:w-1/2 max-w-md flex flex-col justify-center">
+      <div class="md:w-1/2 max-w-md flex flex-col justify-center font-hero">
          <div class="md:text-5xl text-2xl uppercase font-black">Conheça Joaldo Mendonça, 
             <br/>
             <br/>seu corretor de imóveis</div>

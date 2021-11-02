@@ -35,7 +35,7 @@
 	
 </script>
 
-<div class="barra space-x-4 btn-group mx-auto justify-center w-max flex-nowrap mt-4 mb-0">
+<div class="barra space-x-4 btn-group mx-auto justify-center w-max flex-nowrap mb-0">
     <label class="cursor-pointer label space-x-2">
       <span class="label-text">{reverso? "Decrescente": "Crescente"}</span> 
       <input type="checkbox" bind:checked={reverso} class="toggle">

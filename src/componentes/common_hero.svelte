@@ -3,11 +3,11 @@
 </script>
 
 
-<div class="hero h-72" style={`background-image: url(${bg_url});`}>
+<div class="hero h-64" style={`background-image: url(${bg_url});`}>
     <div class="hero-overlay bg-opacity-60"></div> 
     <div class="text-center hero-content text-neutral-content">
       <div class="max-w-md">
-        <h1 class="mb-5 text-5xl font-bold">
+        <h1 class="mt-10 text-5xl font-bold">
           Joaldo Mendonça Imóveis.
         </h1> 
       </div>
@@ -16,6 +16,6 @@
 
   <style>
     h1{
-      font-family: "Ruluko";
+      font-family: "Lato";
     }
   </style>

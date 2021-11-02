@@ -4,7 +4,11 @@
     export let order;
 </script>
 
-<div class={` w-96 card my-5 rounded-none shadow-xl relative ${order} `} on:click={() => window.location = `/${data.slug}`} data-aos="flip-left" data-aos-once="true">
+<div 
+	class={` w-80 h-72 card my-5 rounded-none shadow-xl relative ${order} 
+		transition-all
+		hover:cursor-pointer hover:-translate-y-1`} 
+	on:click={() => window.location = `/${data.slug}`} data-aos="flip-left" data-aos-once="true">
 	<div class="topo absolute p-4 pl-1 w-full flex text-sm justify-between">
 		<div class="tags text-xs text-gray-600 flex">
 			{#each data_.tags as tag}
@@ -17,12 +21,12 @@
 			{data_.qnt} {data_.qnt === 1? `disponível`: 'disponíveis'}
 		</div>
 	</div>
-	<figure class="h-64">
-		<img class="h-full" src={data_.fotos[0].foto} alt=""/>
+	<figure class="h-56 overflow-hidden object-center object-cover">
+		<img class="w-full" src={data_.fotos[0].foto} alt=""/>
 	</figure>
 	<div class="card-body max-w-md card-body">
 		<div class="w-full flex pl-2 justify-between">
-			<div class="card-title text-1xl duration-300 transition-all hover:cursor-pointer border-white border-b-2 hover:border-gray-400 text-primaria mb-1.5">
+			<div class="card-title text-header italic text-1xl duration-300 transition-all hover:cursor-pointer border-white border-b-2 hover:border-gray-400 text-primaria mb-1.5">
 				{data_.titulo}
 			</div>
 			<div class="prize text-xs">
@@ -58,9 +62,3 @@
 		</div>
 	</div>
 </div>
-
-<style type="text/css">
-	.titulo{
-		font-family: 'Lato';
-	}
-</style>

@@ -7,6 +7,11 @@ module.exports = {
         'primary': '#ff914d',
         'secondary': '#004aad'
       }
+    },
+    fontFamily:{
+      'hero': ["Lato"],
+      'header': ["Ruluko"],
+      'body': ['"Noto Sans"']
     }
   },
   plugins: [
