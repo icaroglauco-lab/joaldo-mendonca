@@ -1,7 +1,7 @@
 <script context="module">
   export async function load({ page, fetch }) {
     const slug = page.params.slug;
-    const data = await fetch(`${slug}.json`)
+    const data = await fetch(`propriedades/${slug}.json`)
         .then((r) => r.json());
     return {
       props: { data }
