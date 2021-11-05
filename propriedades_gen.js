@@ -1,5 +1,8 @@
 import fs from 'fs';
-let data = fs.readdirSync(`static/propriedades/`)
+let data = fs.readdirSync(`static/propriedades/`);
+
+if(data.length>0)
+data = data
     .map(fileName => {
         let slug = fileName.split('.');
         slug.pop()
