@@ -1,5 +1,5 @@
 import fs from 'fs';
-if(fs.existsSync(`static/propriedades/`){
+if(fs.existsSync(`static/propriedades/`)){
     let data = fs.readdirSync(`static/propriedades/`)
     .map(fileName => {
         let slug = fileName.split('.');
