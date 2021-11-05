@@ -6,7 +6,7 @@
 </script>
 
 <a href={`/${data.slug}`}
-	class={`hover:scale-105 bg-white w-96 h-90 card my-5 rounded-none shadow-xl relative order-${order+1} transition-all hover:cursor-pointer hover:-translate-y-1`} 
+	class={`hover:scale-105 bg-white w-96 h-80 card my-5 rounded-none shadow-xl relative order-${order+1} transition-all hover:cursor-pointer hover:-translate-y-1`} 
 	data-aos="flip-left" data-aos-once="true"
 
 	style={`width: ${width}`}>

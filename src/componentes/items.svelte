@@ -46,8 +46,8 @@
       {#each data_filtered as p, i}
         <div class="mx-auto product-wrapper grid grid-gap-24 w-2/3">
           <Produto order={i} data={p} width="450px"/>
-          <p class="text-xl text-body py-5 flex flex-col justify-between ">
-            <span>
+          <p class="text-xl order-2 text-body py-5 flex flex-col justify-between overflow-hidden ">
+            <span class=" h-80 truncate whitespace-nowrap">
               {p.data.desc}
             </span>
             <a class="veja-mais underline text-base hover:animate-pulse" href={`${p.slug}`}>veja mais</a>
