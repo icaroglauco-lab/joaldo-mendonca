@@ -31,8 +31,7 @@ collections:
         widget: "list"
         allow_add: true
         add_to_top: true
-        default: []
-
+        
   - name: propriedades
     label: Propriedades
     folder: static/propriedades
@@ -66,7 +65,6 @@ collections:
         widget: "list"
         required: false
         allow_add: true
-        fields: []
 
       # Galeria de imagens
       - label: "Fotos demonstrativas"
