@@ -4,15 +4,15 @@
     export let order;
 </script>
 
-<div 
-	class={` w-80 h-72 card my-5 rounded-none shadow-xl relative ${order} 
+<a href={`/${data.slug}` }
+	class={` w-96 h-72 card my-5 rounded-none shadow-xl relative ${order} 
 		transition-all
 		hover:cursor-pointer hover:-translate-y-1`} 
-	on:click={() => window.location = `/${data.slug}`} data-aos="flip-left" data-aos-once="true">
+	data-aos="flip-left" data-aos-once="true">
 	<div class="topo absolute p-4 pl-1 w-full flex text-sm justify-between">
-		<div class="tags text-xs text-gray-600 flex">
+		<div class="tags text-xs text-gray-600 flex flex-wrap">
 			{#each data_.tags as tag}
-			<div class="p-1 rounded-full hover:cursor-pointer bg-white mx-1">
+			<div class="p-1 rounded-full hover:cursor-pointer bg-white m-1">
 				{tag}
 			</div>
 			{/each}
@@ -61,4 +61,4 @@
 			{data_.loc_name}
 		</div>
 	</div>
-</div>
+</a>

@@ -21,5 +21,6 @@
   }
   :global(body){
     font-family: "Noto Sans";
+    background-color: #f1f1f1;
   }
 </style>

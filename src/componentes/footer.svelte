@@ -1,28 +1,19 @@
 
-<footer class="p-10 footer bg-white text-gray-800 flex flex-col">
+<footer class="p-10 footer bg-gray-100 shadow-inner text-gray-800 flex flex-col">
     <div class="flex justify-evenly w-full">
-    <div class="flex flex-col">
-      <span class="footer-title">Services</span> 
-      <a class="link link-hover">Branding</a> 
-      <a class="link link-hover">Design</a> 
-      <a class="link link-hover">Marketing</a> 
-      <a class="link link-hover">Advertisement</a>
-    </div> 
-    <div class="flex flex-col">
-      <span class="footer-title">Company</span> 
-      <a class="link link-hover">About us</a> 
-      <a class="link link-hover">Contact</a> 
-      <a class="link link-hover">Jobs</a> 
-      <a class="link link-hover">Press kit</a>
-    </div> 
-    <div class="flex flex-col">
-      <span class="footer-title">Legal</span> 
-      <a class="link link-hover">Terms of use</a> 
-      <a class="link link-hover">Privacy policy</a> 
-      <a class="link link-hover">Cookie policy</a>
-    </div>  
+      <div class="flex flex-col">
+        <span class="footer-title">Joaldo Mendonça Imóveis</span> 
+        <a class="link link-hover">Todas as Propriedades</a> 
+        <a class="link link-hover">Entre em contato</a> 
+      </div> 
+      <div class="flex flex-col">
+        <span class="footer-title">Empreendimentos</span> 
+        <a class="link link-hover">Exemplo</a> 
+        <a class="link link-hover">Exemplo</a> 
+        <a class="link link-hover">Exemplo</a>
+      </div> 
     </div>
     
-    <img class="h-96 mx-auto" src="/real_estate_isometric_illustration-04.jpg" alt="Ilustração rodapé">
+    <img class="h-96 mx-auto" src="/pngaaa.com-333796.png" alt="Ilustração rodapé">
   </footer>
   

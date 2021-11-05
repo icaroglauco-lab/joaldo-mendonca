@@ -9,7 +9,7 @@
 	${telefone.length>1? "Você pode entrar em contato comigo pelo telefone "+telefone: ""}`
 </script>
 
-<div class="col-span-1 w-96 space-y-4 shadow-lg bg-white dark:bg-neutral mt-20">
+<div class="col-span-1 w-96 space-y-4 shadow bg-white dark:bg-neutral ">
 	<div class="info flex flex-col space-y-2 text-center p-5">
 		<img alt="profile" src="pp.jpeg" class="mx-auto h-52 -mt-20 text-sm text-neutral">
 		<span class="nome text-2xl">Joaldo Mendonça</span>

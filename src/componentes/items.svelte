@@ -44,7 +44,7 @@
 
     {#if data_filtered.length<=4}
       {#each data_filtered as p, i}
-        <div class="mx-auto product-wrapper grid grid-gap-6 w-2/3">
+        <div class="mx-auto product-wrapper grid grid-gap-24 w-2/3">
           <Produto order={i} data={p}/>
           <p class="text-xl text-body py-14">
             {p.data.desc}
@@ -67,6 +67,6 @@
 
 <style>
   .product-wrapper{
-    grid-template-columns: 370px auto;
+    grid-template-columns: 440px auto;
   }
 </style>

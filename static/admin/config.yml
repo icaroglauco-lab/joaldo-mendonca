@@ -2,6 +2,37 @@ backend:
   name: git-gateway
   branch: main
 collections:
+  - name: Empreendimentos
+    label: empreendimentos
+    folder: static/empreendimentos
+    create: true
+    identifier_field: slug
+    extension: json
+    slug: "empreendimento_{{slug}}"
+    fields:
+      # Detalhes informativos
+      - label: "Título"
+        name: "titulo"
+        widget: "string"
+      - label: "Descrição"
+        name: "desc"
+        widget: "text"
+      - label: "Localização (em mapa)"
+        name: "loc"
+        widget: "map"
+        default: "{ \"type\": \"Point\",\"coordinates\": [-40.8427477,-14.8519483]}"
+      # Galeria de imagens
+      - label: "Foto demonstrativa"
+        name: "foto"
+        widget: "image"
+        choose_url: true
+      - label: "Palavras-chave (ex: \"Lotemaneto Rural\")"
+        name: "tags"
+        widget: "list"
+        allow_add: true
+        add_to_top: true
+        default: []
+
   - name: propriedades
     label: Propriedades
     folder: static/propriedades
@@ -15,7 +46,8 @@ collections:
       - label: "Título"
         name: "titulo"
         widget: "string"
-      - {label: "Descrição", name: "desc", widget:"text", required: true}
+      - {label: "Descrição", name: "desc", widget: "text", required: true}
+      
       - {label: "Disponível (?)", name: "disponibilidade", widget: "boolean", default: true}
       - label: "Localização"
         name: "loc_name"
