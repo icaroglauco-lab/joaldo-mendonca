@@ -5,8 +5,8 @@
 	export let reverse;
 	export let clear;
 
-	$: localizações = [... new Set(data.map(item => item["loc_name"]))];
-	$: tags =  [... new Set(data.map(item => item["tags"]).flat())];
+	$: localizações = [... new Set(data.map(item => item.data["loc_name"]))];
+	$: tags =  [... new Set(data.map(item => item.data["tags"]).flat())];
 
 	let reverso = false;
 
@@ -16,13 +16,13 @@
 		"tags" : (value) =>{
 			filter_tag( (data) => 
 				data.filter(item =>
-					item["tags"].indexOf(value) > -1
+					item.data["tags"].indexOf(value) > -1
 			))
 		},
 		"localization" : (value) =>  {
 			filter_loc( (data) => 
 				data.filter(item =>
-					item["loc_name"] === value
+					item.data["loc_name"] === value
 			))
 		},
 	}
@@ -31,7 +31,7 @@
 		filters[attr](env.target.value)
 	
 
-	// $: console.log(data);
+	$: console.log(data);
 	
 </script>
 

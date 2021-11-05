@@ -47,7 +47,7 @@ collections:
         name: "titulo"
         widget: "string"
       - {label: "Descrição", name: "desc", widget: "text", required: true}
-      
+
       - {label: "Disponível (?)", name: "disponibilidade", widget: "boolean", default: true}
       - label: "Localização"
         name: "loc_name"
@@ -60,6 +60,13 @@ collections:
         name: "qnt"
         widget: "number"
         value_type: "int"
+
+      - label: "Features"
+        name: "features"
+        widget: "list"
+        required: false
+        allow_add: true
+        fields: []
 
       # Galeria de imagens
       - label: "Fotos demonstrativas"

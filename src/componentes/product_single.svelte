@@ -4,7 +4,7 @@
 </script>
 
 <div class="container grid gap-14 my-32">
-	<div class="container shadow">
+	<div class="container shadow  bg-white p-6">
 		<section>
 			fotos
 		</section>
@@ -24,7 +24,7 @@
 <style type="text/css">
 	.container.grid {
 		width: 70%;
-		margin-left: 15%;
+		margin-left: 13% ;
 		box-sizing: content-box;
 		grid-template-columns: auto 250px;
 	}

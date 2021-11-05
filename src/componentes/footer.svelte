@@ -1,5 +1,5 @@
 
-<footer class="p-10 footer bg-gray-100 shadow-inner text-gray-800 flex flex-col">
+<footer class="p-10 footer bg-gray-600 shadow-inner text-white flex flex-col">
     <div class="flex justify-evenly w-full">
       <div class="flex flex-col">
         <span class="footer-title">Joaldo Mendonça Imóveis</span> 

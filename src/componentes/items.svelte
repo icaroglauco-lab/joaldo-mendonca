@@ -45,12 +45,16 @@
     {#if data_filtered.length<=4}
       {#each data_filtered as p, i}
         <div class="mx-auto product-wrapper grid grid-gap-24 w-2/3">
-          <Produto order={i} data={p}/>
-          <p class="text-xl text-body py-14">
-            {p.data.desc}
-            <a href={`${p.slug}`}>veja mais</a>
+          <Produto order={i} data={p} width="450px"/>
+          <p class="text-xl text-body py-5 flex flex-col justify-between ">
+            <span>
+              {p.data.desc}
+            </span>
+            <a class="veja-mais underline text-base hover:animate-pulse" href={`${p.slug}`}>veja mais</a>
           </p>
         </div>
+
+        <div class="divider w-1/2 mx-auto text-transparent">-----------------------------------------</div>
       {/each}
     
     {:else}
@@ -67,6 +71,9 @@
 
 <style>
   .product-wrapper{
-    grid-template-columns: 440px auto;
+    grid-template-columns: 500px auto;
+  }
+  .veja-mais{
+    display: block;
   }
 </style>

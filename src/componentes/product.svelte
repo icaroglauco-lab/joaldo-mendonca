@@ -2,13 +2,14 @@
     export let data;
 	let data_ = data.data;
     export let order;
+    export let width = "";
 </script>
 
-<a href={`/${data.slug}` }
-	class={` w-96 h-72 card my-5 rounded-none shadow-xl relative ${order} 
-		transition-all
-		hover:cursor-pointer hover:-translate-y-1`} 
-	data-aos="flip-left" data-aos-once="true">
+<a href={`/${data.slug}`}
+	class={`hover:scale-105 bg-white w-96 h-90 card my-5 rounded-none shadow-xl relative order-${order+1} transition-all hover:cursor-pointer hover:-translate-y-1`} 
+	data-aos="flip-left" data-aos-once="true"
+
+	style={`width: ${width}`}>
 	<div class="topo absolute p-4 pl-1 w-full flex text-sm justify-between">
 		<div class="tags text-xs text-gray-600 flex flex-wrap">
 			{#each data_.tags as tag}
@@ -53,8 +54,8 @@
 				
 			</div>
 		</div>
-		<div class="card-actions flex w-full mt-7 text-secundaria hover:cursor-pointer hover:animate-pulse">
-			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+		<div class="card-actions flex w-full mt-7 text-gray-600 text-xs hover:cursor-pointer hover:animate-pulse items-end">
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 			  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
 			  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
 			</svg>
