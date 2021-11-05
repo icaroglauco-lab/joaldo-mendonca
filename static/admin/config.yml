@@ -4,7 +4,7 @@ backend:
 collections:
   - name: Empreendimentos
     label: empreendimentos
-    folder: static/empreendimentos
+    folder: src/empreendimentos
     create: true
     identifier_field: slug
     extension: json
@@ -38,7 +38,7 @@ collections:
 
   - name: propriedades
     label: Propriedades
-    folder: static/propriedades
+    folder: src/propriedades
     create: true
     identifier_field: titulo
     extension: json
