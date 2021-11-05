@@ -6049,7 +6049,7 @@ function add_attribute(name, value, boolean) {
 }
 function afterUpdate() {
 }
-var css$3 = {
+var css$9 = {
   code: "#svelte-announcer.svelte-1j55zn5{position:absolute;left:0;top:0;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap;width:1px;height:1px}",
   map: null
 };
@@ -6074,7 +6074,7 @@ var Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     $$bindings.props_1(props_1);
   if ($$props.props_2 === void 0 && $$bindings.props_2 && props_2 !== void 0)
     $$bindings.props_2(props_2);
-  $$result.css.add(css$3);
+  $$result.css.add(css$9);
   {
     stores.page.set(page);
   }
@@ -6101,7 +6101,7 @@ var user_hooks = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module"
 });
-var template = ({ head, body }) => '<!DOCTYPE html>\r\n<html lang="en">\r\n	<head>\r\n		<meta charset="utf-8" />\r\n		<link rel="icon" href="/favicon.png" />\r\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\r\n		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"><\/script>\r\n		' + head + "\r\n	</head>\r\n	<body>\r\n		" + body + '\r\n		<script>\r\n		  if (window.netlifyIdentity) {\r\n		    window.netlifyIdentity.on("init", user => {\r\n		      if (!user) {\r\n			window.netlifyIdentity.on("login", () => {\r\n			  document.location.href = "/admin/";\r\n			});\r\n		      }\r\n		    });\r\n		  }\r\n		<\/script>\r\n	</body>\r\n</html>\r\n';
+var template = ({ head, body }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="/favicon.png" />\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"><\/script>\n		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">\n		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"><\/script>\n		<script src="https://kit.fontawesome.com/c02b5df846.js" crossorigin="anonymous"><\/script>\n		' + head + "\n	</head>\n	<body>\n		" + body + '\n		<script>\n		  if (window.netlifyIdentity) {\n		    window.netlifyIdentity.on("init", user => {\n		      if (!user) {\n			window.netlifyIdentity.on("login", () => {\n			  document.location.href = "/admin/";\n			});\n		      }\n		    });\n		  }\n		  AOS.init();\n		<\/script>\n	</body>\n</html>\n';
 var options = null;
 var default_settings = { paths: { "base": "", "assets": "" } };
 function init(settings = default_settings) {
@@ -6112,9 +6112,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/_app/start-01941267.js",
+      file: assets + "/_app/start-b717abb0.js",
       css: [assets + "/_app/assets/start-d5b4de3e.css"],
-      js: [assets + "/_app/start-01941267.js", assets + "/_app/chunks/vendor-f6eb2495.js"]
+      js: [assets + "/_app/start-b717abb0.js", assets + "/_app/chunks/vendor-1e38c91f.js"]
     },
     fetched: void 0,
     floc: false,
@@ -6136,7 +6136,7 @@ function init(settings = default_settings) {
     service_worker: null,
     router: true,
     ssr: true,
-    target: "#svelte",
+    target: null,
     template,
     trailing_slash: "never"
   };
@@ -6144,7 +6144,7 @@ function init(settings = default_settings) {
 var d = (s2) => s2.replace(/%23/g, "#").replace(/%3[Bb]/g, ";").replace(/%2[Cc]/g, ",").replace(/%2[Ff]/g, "/").replace(/%3[Ff]/g, "?").replace(/%3[Aa]/g, ":").replace(/%40/g, "@").replace(/%26/g, "&").replace(/%3[Dd]/g, "=").replace(/%2[Bb]/g, "+").replace(/%24/g, "$");
 var empty = () => ({});
 var manifest = {
-  assets: [{ "file": "admin/config.yml", "size": 4107, "type": "text/yaml" }, { "file": "admin/index.html", "size": 449, "type": "text/html" }, { "file": "favicon.png", "size": 1571, "type": "image/png" }, { "file": "logo.png", "size": 34780, "type": "image/png" }, { "file": "pp.jpeg", "size": 40095, "type": "image/jpeg" }, { "file": "uploads/francesca-tosolini-thkjamco3qe-unsplash.jpg", "size": 1970678, "type": "image/jpeg" }, { "file": "uploads/jason-dent-w3efhqxjkze-unsplash.jpg", "size": 2122474, "type": "image/jpeg" }, { "file": "uploads/stephen-leonardi-xkio6zgcobo-unsplash.jpg", "size": 2223707, "type": "image/jpeg" }],
+  assets: [{ "file": "admin/config.yml", "size": 5223, "type": "text/yaml" }, { "file": "admin/index.html", "size": 437, "type": "text/html" }, { "file": "favicon.png", "size": 1571, "type": "image/png" }, { "file": "logo.png", "size": 34780, "type": "image/png" }, { "file": "pngaaa.com-333796.png", "size": 39936, "type": "image/png" }, { "file": "pp.jpeg", "size": 40095, "type": "image/jpeg" }, { "file": "propriedades.json", "size": 2, "type": "application/json" }, { "file": "real_estate_isometric_illustration-04.jpg", "size": 1546764, "type": "image/jpeg" }, { "file": "uploads/francesca-tosolini-thkjamco3qe-unsplash.jpg", "size": 1970678, "type": "image/jpeg" }, { "file": "uploads/jason-dent-w3efhqxjkze-unsplash.jpg", "size": 2122474, "type": "image/jpeg" }, { "file": "uploads/stephen-leonardi-xkio6zgcobo-unsplash.jpg", "size": 2223707, "type": "image/jpeg" }],
   layout: "src/routes/__layout.svelte",
   error: ".svelte-kit/build/components/error.svelte",
   routes: [
@@ -6154,14 +6154,6 @@ var manifest = {
       params: empty,
       a: ["src/routes/__layout.svelte", "src/routes/index.svelte"],
       b: [".svelte-kit/build/components/error.svelte"]
-    },
-    {
-      type: "endpoint",
-      pattern: /^\/propriedades\.json$/,
-      params: empty,
-      load: () => Promise.resolve().then(function() {
-        return propriedades_json;
-      })
     },
     {
       type: "page",
@@ -6210,7 +6202,7 @@ var module_lookup = {
     return _slug_;
   })
 };
-var metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-51c333b2.js", "css": ["assets/pages/__layout.svelte-6dbbbb63.css"], "js": ["pages/__layout.svelte-51c333b2.js", "chunks/vendor-f6eb2495.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-9f071f8d.js", "css": [], "js": ["error.svelte-9f071f8d.js", "chunks/vendor-f6eb2495.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-1e151133.js", "css": ["assets/pages/index.svelte-08043d26.css"], "js": ["pages/index.svelte-1e151133.js", "chunks/vendor-f6eb2495.js"], "styles": [] }, "src/routes/buscar.svelte": { "entry": "pages/buscar.svelte-59e9e1b2.js", "css": ["assets/pages/buscar.svelte-93340f6c.css"], "js": ["pages/buscar.svelte-59e9e1b2.js", "chunks/vendor-f6eb2495.js"], "styles": [] }, "src/routes/[slug].svelte": { "entry": "pages/[slug].svelte-fd7ec6b1.js", "css": [], "js": ["pages/[slug].svelte-fd7ec6b1.js", "chunks/vendor-f6eb2495.js"], "styles": [] } };
+var metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-6880610c.js", "css": ["assets/pages/__layout.svelte-9ae07c15.css"], "js": ["pages/__layout.svelte-6880610c.js", "chunks/vendor-1e38c91f.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-1efa5af9.js", "css": [], "js": ["error.svelte-1efa5af9.js", "chunks/vendor-1e38c91f.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-78cd6dbf.js", "css": ["assets/pages/index.svelte-b4df5efb.css", "assets/items-1664b63b.css"], "js": ["pages/index.svelte-78cd6dbf.js", "chunks/vendor-1e38c91f.js", "chunks/items-b32734b2.js"], "styles": [] }, "src/routes/buscar.svelte": { "entry": "pages/buscar.svelte-6851c082.js", "css": ["assets/items-1664b63b.css", "assets/common_hero-94a40ade.css"], "js": ["pages/buscar.svelte-6851c082.js", "chunks/vendor-1e38c91f.js", "chunks/items-b32734b2.js", "chunks/common_hero-77c9573e.js"], "styles": [] }, "src/routes/[slug].svelte": { "entry": "pages/[slug].svelte-ecab0bbb.js", "css": ["assets/pages/[slug].svelte-43ce0811.css", "assets/common_hero-94a40ade.css"], "js": ["pages/[slug].svelte-ecab0bbb.js", "chunks/vendor-1e38c91f.js", "chunks/common_hero-77c9573e.js"], "styles": [] } };
 async function load_component(file) {
   const { entry, css: css2, js, styles } = metadata_lookup[file];
   return {
@@ -6227,25 +6219,9 @@ function render(request, {
   const host = request.headers["host"];
   return respond({ ...request, host }, options, { prerender });
 }
-function get$1() {
-  let data = import_fs.default.readdirSync(`src/propriedades/`).map((fileName) => {
-    const f = JSON.parse(import_fs.default.readFileSync(`src/propriedades/${fileName}`, { encoding: "utf8", flag: "r" }));
-    return f;
-  });
-  return {
-    body: data,
-    status: 200
-  };
-}
-var propriedades_json = /* @__PURE__ */ Object.freeze({
-  __proto__: null,
-  [Symbol.toStringTag]: "Module",
-  get: get$1
-});
 function get({ params }) {
   const { slug } = params;
-  const { metadata, content } = process(`src/propriedades/${slug}.md`);
-  const body = JSON.stringify({ metadata, content });
+  const body = import_fs.default.readFileSync(`static/propriedades/${slug}.json`);
   return { body };
 }
 var _slug__json = /* @__PURE__ */ Object.freeze({
@@ -6253,20 +6229,57 @@ var _slug__json = /* @__PURE__ */ Object.freeze({
   [Symbol.toStringTag]: "Module",
   get
 });
-var css$2 = {
-  code: "@tailwind base;@tailwind components;@tailwind utilities;@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Noto+Sans:ital@0;1&family=Ruluko&display=swap');",
+var Footer = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<footer class="${"p-10 footer bg-gray-600 shadow-inner text-white flex flex-col"}"><div class="${"flex justify-evenly w-full"}"><div class="${"flex flex-col"}"><span class="${"footer-title"}">Joaldo Mendon\xE7a Im\xF3veis</span> 
+        <a class="${"link link-hover"}">Todas as Propriedades</a> 
+        <a class="${"link link-hover"}">Entre em contato</a></div> 
+      <div class="${"flex flex-col"}"><span class="${"footer-title"}">Empreendimentos</span> 
+        <a class="${"link link-hover"}">Exemplo</a> 
+        <a class="${"link link-hover"}">Exemplo</a> 
+        <a class="${"link link-hover"}">Exemplo</a></div></div>
+    
+    <img class="${"h-96 mx-auto"}" src="${"/pngaaa.com-333796.png"}" alt="${"Ilustra\xE7\xE3o rodap\xE9"}"></footer>`;
+});
+var css$8 = {
+  code: ".navbar.svelte-1a5ws6a{z-index:1000;position:fixed;width:100%;top:0px;font-family:sans-serif\n        \n    }",
+  map: null
+};
+var Navbar = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let opacity_check = 0;
+  $$result.css.add(css$8);
+  return `<div class="${escape(null_to_empty(`navbar mb-2 bg-neutral text-neutral-content  rounded-none bg-opacity-${opacity_check}`)) + " svelte-1a5ws6a"}"><div class="${"flex-1 px-2 mx-2"}"><span class="${"text-lg font-bold"}"><a href="${"/"}"><img style="${"height:45px;"}" src="${"logo.png"}" alt="${"logo"}"></a></span></div> 
+    <div class="${"flex-none hidden px-2 mx-2 lg:flex"}"><div class="${"flex items-stretch"}"><a href="${"/busca"}" class="${"btn btn-ghost btn-sm rounded-btn font-thin"}"><svg class="${"inline-block w-5 mr-2 stroke-current"}" fill="${"none"}" stroke="${"currentColor"}" viewBox="${"0 0 24 24"}" xmlns="${"http://www.w3.org/2000/svg"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"}"></path></svg>
+                Propriedades
+              
+        </a> 
+        <a href="${"/contato"}" class="${"btn btn-ghost btn-sm rounded-btn font-thin"}"><svg xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" class="${"inline-block w-5 mr-2 stroke-current"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"}"></path></svg>
+                Entre em contato
+              
+        </a> 
+        <span class="${"btn btn-ghost btn-sm rounded-btn font-thin"}"><i class="${"fab fa-whatsapp-square inline-block w-5 mr-2 stroke-current"}"></i>
+                (77) 9999999
+              
+        </span></div></div> 
+  </div>`;
+});
+var css$7 = {
+  code: `@tailwind base;@tailwind components;@tailwind utilities;@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Noto+Sans:ital@0;1&family=Ruluko&display=swap');section{@apply my-28;}body{font-family:"Noto Sans";background-color:#f1f1f1}`,
   map: null
 };
 var _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  $$result.css.add(css$2);
-  return `${slots.default ? slots.default({}) : ``}`;
+  $$result.css.add(css$7);
+  return `${validate_component(Navbar, "Navbar").$$render($$result, {}, {}, {})}
+
+${slots.default ? slots.default({}) : ``}
+
+${validate_component(Footer, "Footer").$$render($$result, {}, {}, {})}`;
 });
 var __layout = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": _layout
 });
-function load$2({ error: error2, status }) {
+function load$3({ error: error2, status }) {
   return { props: { error: error2, status } };
 }
 var Error$1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -6289,118 +6302,219 @@ var error = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": Error$1,
-  load: load$2
+  load: load$3
 });
-var css$1 = {
-  code: ".bg-dots.svelte-1wss6gz{background-image:url(https://assets-global.website-files.com/5b5a66e9f3166b36708705fa/5dea7a12bb83ab1f13040de5_cx-dots.svg);background-repeat:no-repeat\r\n  }",
+var css$6 = {
+  code: ".bg-dots.svelte-1wss6gz{background-image:url(https://assets-global.website-files.com/5b5a66e9f3166b36708705fa/5dea7a12bb83ab1f13040de5_cx-dots.svg);background-repeat:no-repeat\n  }",
   map: null
 };
-var Hero = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  $$result.css.add(css$1);
-  return `<div class="${"m-auto max-w-6xl p-12"}"><div class="${"flex flex-col md:flex-row"}"><div class="${"md:w-1/2 max-w-md flex flex-col justify-center"}"><div class="${"md:text-5xl text-2xl uppercase font-black"}">Joaldo Mendon\xE7a. Corretor de Im\xF3veis</div>
-         <div class="${"text-xl mt-4"}">Minha miss\xE3o \xE9 trazer facilidade e qualidade em neg\xF3cios para toda regi\xE3o.</div>
-         <div class="${"my-5 h-16"}"><a href="${"/buscar"}"><div class="${"shadow-md font-medium py-2 px-4 text-yellow-100 cursor-pointer bg-primaria hover:bg-yellow-500 rounded text-lg text-center w-48"}">Conhe\xE7a nossas propriedades</div></a></div></div>
+var JoaldoMendonca = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  $$result.css.add(css$6);
+  return `<section class="${"m-auto max-w-6xl p-24"}"><div class="${"flex flex-col md:flex-row space-x-28"}"><div class="${"md:w-1/2 max-w-md flex flex-col justify-center font-hero"}"><div class="${"md:text-5xl text-2xl uppercase font-black"}">Conhe\xE7a Joaldo Mendon\xE7a, 
+            <br>
+            <br>seu corretor de im\xF3veis</div>
+         <div class="${"text-xl mt-4"}" data-aos="${"zoom-out"}" data-aos-delay="${"300"}" data-aos-duration="${"1500"}">Minha miss\xE3o \xE9 trazer facilidade e qualidade em neg\xF3cios para toda regi\xE3o.
+         </div>
+         <div class="${"text-xl mt-4"}" data-aos="${"zoom-out"}" data-aos-delay="${"600"}" data-aos-duration="${"1500"}">Com profissionalismo,
+         </div>
+         <div class="${"text-xl mt-4"}" data-aos="${"zoom-out"}" data-aos-delay="${"900"}" data-aos-duration="${"1500"}">Seguran\xE7a,
+         </div>
+         <div class="${"text-2xl mt-4"}" data-aos="${"zoom-out"}" data-aos-delay="${"1500"}" data-aos-duration="${"1500"}">E muito trabalho.
+         </div></div>
       <div class="${"flex md:justify-end w-full md:w-1/2 -mt-5"}"><div class="${"bg-dots svelte-1wss6gz"}"><div class="${"shadow-2xl max-w-md z-10 rounded-full mt-6 ml-4"}"><img alt="${"card img"}" class="${"rounded-t"}" src="${"/pp.jpeg"}"> 
-               <div class="${"text-2xl p-10 bg-white"}"><img alt="${"quote"}" id="${"joaldo"}" class="${"float-left mr-1"}" src="${"https://assets-global.website-files.com/5b5a66e9f3166b36708705fa/5cf8fb1f994fb7168d0d66fb_quote-intro.svg"}"> Ora, \xE0quele que \xE9 poderoso para fazer tudo muito mais abundantemente al\xE9m daquilo que pedimos ou pensamos, segundo o poder que em n\xF3s opera.</div></div></div></div></div></div>`;
+               <div class="${"text-2xl p-10 bg-white dark:text-black"}"><img alt="${"quote"}" id="${"joaldo"}" class="${"float-left mr-1"}" src="${"https://assets-global.website-files.com/5b5a66e9f3166b36708705fa/5cf8fb1f994fb7168d0d66fb_quote-intro.svg"}"> 
+                  Ora, \xE0quele que \xE9 poderoso para fazer tudo muito mais abundantemente al\xE9m daquilo que pedimos ou pensamos, segundo o poder que em n\xF3s opera.</div></div></div></div></div></section>`;
 });
-var Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let { data } = $$props;
-  console.log(data);
-  if ($$props.data === void 0 && $$bindings.data && data !== void 0)
-    $$bindings.data(data);
-  return `${validate_component(Hero, "Hero").$$render($$result, {}, {}, {})}`;
-});
-var index = /* @__PURE__ */ Object.freeze({
-  __proto__: null,
-  [Symbol.toStringTag]: "Module",
-  "default": Routes
-});
-var css = {
-  code: ".titulo.svelte-zg9vr5{font-family:'Lato'}",
-  map: null
-};
 var Product = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { data } = $$props;
+  let data_ = data.data;
   let { order } = $$props;
+  let { width = "" } = $$props;
   if ($$props.data === void 0 && $$bindings.data && data !== void 0)
     $$bindings.data(data);
   if ($$props.order === void 0 && $$bindings.order && order !== void 0)
     $$bindings.order(order);
-  $$result.css.add(css);
-  return `<div class="${escape(null_to_empty(` w-96 card shadow-xl relative ${order}`)) + " svelte-zg9vr5"}"><div class="${"topo absolute p-4 pl-1 w-full flex text-sm justify-between"}"><div class="${"tags text-xs text-gray-600 flex"}">${each(data.tags, (tag) => `<div class="${"p-1 rounded-full hover:cursor-pointer bg-white mx-1"}">${escape(tag)}
+  if ($$props.width === void 0 && $$bindings.width && width !== void 0)
+    $$bindings.width(width);
+  return `<a${add_attribute("href", `/${data.slug}`, 0)}${add_attribute("class", `hover:scale-105 bg-white w-96 h-80 card my-5 rounded-none shadow-xl relative order-${order + 1} transition-all hover:cursor-pointer hover:-translate-y-1`, 0)} data-aos="${"flip-left"}" data-aos-once="${"true"}"${add_attribute("style", `width: ${width}`, 0)}><div class="${"topo absolute p-4 pl-1 w-full flex text-sm justify-between"}"><div class="${"tags text-xs text-gray-600 flex flex-wrap"}">${each(data_.tags, (tag) => `<div class="${"p-1 rounded-full hover:cursor-pointer bg-white m-1"}">${escape(tag)}
 			</div>`)}</div>
-		<div class="${"disponibilidade text-primaria text-xs text-white"}">${escape(data.qnt)} ${escape(data.qnt === 1 ? `dispon\xEDvel` : "dispon\xEDveis")}</div></div>
-	<figure class="${"h-64"}"><img class="${"h-full"}"${add_attribute("src", data.fotos[0].foto, 0)}></figure>
-	<div class="${"card-body max-w-md card-body"}"><div class="${"w-full flex pl-2 justify-between"}"><div class="${"card-title text-2xl duration-300 transition-all hover:cursor-pointer border-white border-b-2 hover:border-gray-400 text-primaria mb-1.5"}">${escape(data.titulo)}</div>
-			<div class="${"prize text-xs"}">${data.negocio.venda ? `${data.negocio.venda.contrato !== void 0 ? `R$ ${escape(parseInt(data.negocio.venda.contrato).toLocaleString())}
+		<div class="${"disponibilidade text-primaria text-xs"}">${escape(data_.qnt)} ${escape(data_.qnt === 1 ? `dispon\xEDvel` : "dispon\xEDveis")}</div></div>
+	<figure class="${"h-56 overflow-hidden object-center object-cover"}"><img class="${"w-full"}"${add_attribute("src", data_.fotos[0].foto, 0)} alt="${""}"></figure>
+	<div class="${"card-body max-w-md card-body"}"><div class="${"w-full flex pl-2 justify-between"}"><div class="${"card-title text-header italic text-1xl duration-300 transition-all hover:cursor-pointer border-white border-b-2 hover:border-gray-400 text-primaria mb-1.5"}">${escape(data_.titulo)}</div>
+			<div class="${"prize text-xs"}">${data_.negocio.venda ? `${data_.negocio.venda.contrato !== void 0 ? `R$ ${escape(parseInt(data_.negocio.venda.contrato).toLocaleString())}
 						<br><small>Venda a vista</small>` : ``}` : ``}
 
-				${data.negocio.aluguel ? `${data.negocio.aluguel.mensal !== void 0 ? `R$ ${escape(parseInt(data.negocio.aluguel.mensal).toLocaleString())}
+				${data_.negocio.aluguel ? `${data_.negocio.aluguel.mensal !== void 0 ? `R$ ${escape(parseInt(data_.negocio.aluguel.mensal).toLocaleString())}
 						<br><small>Aluguel mensal</small>` : ``}` : ``}
 
-				${data.negocio.loteamento ? `${data.negocio.loteamento.parcelas_plano !== void 0 ? `R$ ${escape(parseInt(data.negocio.loteamento.parcelas_plano[data.negocio.loteamento.parcelas_plano.length - 1]).toLocaleString())}
+				${data_.negocio.loteamento ? `${data_.negocio.loteamento.parcelas_plano !== void 0 ? `R$ ${escape(parseInt(data_.negocio.loteamento.parcelas_plano[data_.negocio.loteamento.parcelas_plano.length - 1]).toLocaleString())}
 						<br><small>Parcelas de at\xE9</small>` : ``}` : ``}</div></div>
-		<div class="${"card-actions flex w-full mt-7 text-secundaria hover:cursor-pointer hover:animate-pulse"}"><svg xmlns="${"http://www.w3.org/2000/svg"}" class="${"h-6 w-6"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"}"></path><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M15 11a3 3 0 11-6 0 3 3 0 016 0z"}"></path></svg>
-			${escape(data.loc_name)}</div></div>
-</div>`;
+		<div class="${"card-actions flex w-full mt-7 text-gray-600 text-xs hover:cursor-pointer hover:animate-pulse items-end"}"><svg xmlns="${"http://www.w3.org/2000/svg"}" class="${"h-3 w-3"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"}"></path><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M15 11a3 3 0 11-6 0 3 3 0 016 0z"}"></path></svg>
+			${escape(data_.loc_name)}</div></div></a>`;
 });
+var css$5 = {
+  code: ".barra.svelte-iqhk4{padding:30px;width:915px}",
+  map: null
+};
 var Barra_busca = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let localiza\u00E7\u00F5es;
-  let tipos_negocio;
+  let tags;
   let { data } = $$props;
-  let { add } = $$props;
+  let { filter_tag } = $$props;
+  let { filter_loc } = $$props;
+  let { reverse } = $$props;
   let { clear } = $$props;
   let reverso = false;
   if ($$props.data === void 0 && $$bindings.data && data !== void 0)
     $$bindings.data(data);
-  if ($$props.add === void 0 && $$bindings.add && add !== void 0)
-    $$bindings.add(add);
+  if ($$props.filter_tag === void 0 && $$bindings.filter_tag && filter_tag !== void 0)
+    $$bindings.filter_tag(filter_tag);
+  if ($$props.filter_loc === void 0 && $$bindings.filter_loc && filter_loc !== void 0)
+    $$bindings.filter_loc(filter_loc);
+  if ($$props.reverse === void 0 && $$bindings.reverse && reverse !== void 0)
+    $$bindings.reverse(reverse);
   if ($$props.clear === void 0 && $$bindings.clear && clear !== void 0)
     $$bindings.clear(clear);
-  localiza\u00E7\u00F5es = [...new Set(data.map((item) => item["loc_name"]))];
-  tipos_negocio = [...new Set(data.map((item) => Object.keys(item["negocio"])).flat())];
-  return `<div class="${"btn-group mx-auto justify-center w-max flex-nowrap"}"><label class="${"cursor-pointer label space-x-2"}"><span class="${"label-text"}">${escape("Crescente")}</span> 
+  $$result.css.add(css$5);
+  localiza\u00E7\u00F5es = [...new Set(data.map((item) => item.data["loc_name"]))];
+  tags = [...new Set(data.map((item) => item.data["tags"]).flat())];
+  {
+    reverse(reverso);
+  }
+  {
+    console.log(data);
+  }
+  return `<div class="${"barra space-x-4 btn-group mx-auto justify-center w-max flex-nowrap mb-0 svelte-iqhk4"}"><label class="${"cursor-pointer label space-x-2"}"><span class="${"label-text"}">${escape("Crescente")}</span> 
       <input type="${"checkbox"}" class="${"toggle"}"${add_attribute("checked", reverso, 1)}></label>
+
 	${each([
     {
       label: "Localiza\xE7\xE3o",
-      items: localiza\u00E7\u00F5es
+      items: localiza\u00E7\u00F5es,
+      attr: "localization"
     },
     {
-      label: "Tipos de neg\xF3cio",
-      items: tipos_negocio
+      label: "Palavras-chave",
+      items: tags,
+      attr: "tags"
     }
   ], (selectionItems) => `<select class="${"select select-bordered rounded-none w-full max-w-xs"}"><option disabled="${"disabled"}" selected="${"selected"}"${add_attribute("value", selectionItems.label, 0)}>${escape(selectionItems.label)}</option>${each(selectionItems.items, (item) => `<option${add_attribute("value", item, 0)}>${escape(item)}</option>`)}</select>`)}
-	<button class="${"btn btn-outline"}">Limpar</button></div>`;
+	<button class="${"btn btn-outline"}">Limpar</button> 
+</div>`;
+});
+var css$4 = {
+  code: ".product-wrapper.svelte-b0ijmp{grid-template-columns:500px auto}.veja-mais.svelte-b0ijmp{display:block}",
+  map: null
+};
+var Items = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let data_filtered;
+  let { data } = $$props;
+  let { maxitems = data.length } = $$props;
+  let filters = [];
+  const filter_tag = (filter) => {
+    filters[1] = filter;
+    console.log(filters);
+  };
+  const filter_loc = (filter) => {
+    filters[2] = filter;
+    console.log(filters);
+  };
+  const clear_filters = () => {
+    filters = [];
+  };
+  const reverse = (flag) => {
+    filters[0] = (data2) => data2.reverse();
+  };
+  if ($$props.data === void 0 && $$bindings.data && data !== void 0)
+    $$bindings.data(data);
+  if ($$props.maxitems === void 0 && $$bindings.maxitems && maxitems !== void 0)
+    $$bindings.maxitems(maxitems);
+  $$result.css.add(css$4);
+  data_filtered = filters.reduce((data_atual, filtro_atual) => {
+    return filtro_atual(data_atual);
+  }, data).slice(0, maxitems);
+  return `${validate_component(Barra_busca, "BarraBuscar").$$render($$result, {
+    data: data_filtered,
+    filter_tag,
+    filter_loc,
+    clear: clear_filters,
+    reverse
+  }, {}, {})}
+
+<div class="${"container flex flex-col mx-auto mt-2 mb-28"}"><div class="${escape(null_to_empty(`container col-span-4 p-2   
+   ${data_filtered.length <= 4 ? "grid gap-14" : " items-start flex  space-x-5 flex-wrap justify-evenly"} `)) + " svelte-b0ijmp"}">${data_filtered.length <= 4 ? `${each(data_filtered, (p, i) => `<div class="${"mx-auto product-wrapper grid grid-gap-24 w-2/3 svelte-b0ijmp"}">${validate_component(Product, "Produto").$$render($$result, { order: i, data: p, width: "450px" }, {}, {})}
+          <p class="${"text-xl order-2 text-body py-5 flex flex-col justify-between overflow-hidden "}"><span class="${"h-80 truncate whitespace-nowrap"}">${escape(p.data.desc)}</span>
+            <a class="${"veja-mais underline text-base hover:animate-pulse svelte-b0ijmp"}"${add_attribute("href", `${p.slug}`, 0)}>veja mais</a>
+          </p></div>
+
+        <div class="${"divider w-1/2 mx-auto text-transparent"}">-----------------------------------------</div>`)}` : `${each(data_filtered, (p, i) => `${validate_component(Product, "Produto").$$render($$result, { order: i, data: p }, {}, {})}`)}`}</div>
+  ${data_filtered.length <= 4 ? `<a class="${"btn btn-outline mx-auto mt-6"}" href="${"/buscar"}">Veja todos</a>` : ``}
+</div>`;
+});
+var css$3 = {
+  code: 'h1.svelte-1eaoifk.svelte-1eaoifk{font-family:"Lato"}h1.svelte-1eaoifk small.svelte-1eaoifk{font-family:"Ruluko"}',
+  map: null
+};
+var LandingHero = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  $$result.css.add(css$3);
+  return `<div class="${"hero min-h-screen"}" style="${"background-image: url(&quot;https://images.unsplash.com/photo-1494526585095-c41746248156?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80&quot;);"}"><div class="${"hero-overlay bg-opacity-60"}"></div> 
+    <div class="${"text-center hero-content text-neutral-content"}"><div class="${"max-w-md"}"><h1 class="${"mb-5 text-5xl font-bold svelte-1eaoifk"}">Joaldo Mendon\xE7a Im\xF3veis.	<svg xmlns="${"http://www.w3.org/2000/svg"}" class="${"h-5 w-5 inline"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}"><path fill-rule="${"evenodd"}" d="${"M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"}" clip-rule="${"evenodd"}"></path></svg>
+          <br>
+          <br>
+          <small class="${"svelte-1eaoifk"}">Seja bem vindo
+          </small></h1> 
+        <a href="${"/buscar"}" class="${"btn btn-primaria rounded-none"}">E encontre seu im\xF3vel dos sonhos</a></div></div>
+  </div>`;
+});
+async function load$2({ fetch: fetch2 }) {
+  const data = await fetch2(`propriedades.json`).then((r) => r.json());
+  return { props: { data } };
+}
+var Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { data } = $$props;
+  if ($$props.data === void 0 && $$bindings.data && data !== void 0)
+    $$bindings.data(data);
+  return `${validate_component(LandingHero, "LandingHeroSection").$$render($$result, {}, {}, {})}
+
+<section class="${"px-6"}"><h2 class="${"text-3xl mx-auto text-center font-header"}">Aqui algumas de nossas propriedades dispon\xEDveis
+	</h2>
+	${validate_component(Items, "ItemsContent").$$render($$result, { data, maxitems: 3 }, {}, {})}</section>
+
+<div class="${"divider"}"><svg xmlns="${"http://www.w3.org/2000/svg"}" class="${"h-6 w-6"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M7 20l4-16m2 16l4-16M6 9h14M4 15h14"}"></path></svg></div> 
+
+${validate_component(JoaldoMendonca, "JoaldoMendoncaSec").$$render($$result, {}, {}, {})}`;
+});
+var index = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  "default": Routes,
+  load: load$2
+});
+var css$2 = {
+  code: 'h1.svelte-u3pl3{font-family:"Lato"}',
+  map: null
+};
+var bg_url = "https://images.unsplash.com/photo-1526948531399-320e7e40f0ca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80";
+var Common_hero = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  $$result.css.add(css$2);
+  return `<div class="${"hero h-64"}"${add_attribute("style", `background-image: url(${bg_url});`, 0)}><div class="${"hero-overlay bg-opacity-60"}"></div> 
+    <div class="${"text-center hero-content text-neutral-content"}"><div class="${"max-w-md"}"><h1 class="${"mt-10 text-5xl font-bold svelte-u3pl3"}">Joaldo Mendon\xE7a Im\xF3veis.
+        </h1></div></div>
+  </div>`;
 });
 async function load$1({ fetch: fetch2 }) {
   const data = await fetch2(`propriedades.json`).then((r) => r.json());
   return { props: { data } };
 }
 var Buscar = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let data_filtered;
   let { data } = $$props;
-  let filters = [];
-  const add_filter = (filter) => {
-    filters.push(filter);
-    console.log(filters);
-  };
-  const clear_filters = () => {
-    filters = [];
-  };
   if ($$props.data === void 0 && $$bindings.data && data !== void 0)
     $$bindings.data(data);
-  data_filtered = filters.reduce((data_atual, filtro_atual) => {
-    return filtro_atual(data_atual);
-  }, data);
-  return `${validate_component(Barra_busca, "BarraBuscar").$$render($$result, {
-    data: data_filtered,
-    add: add_filter,
-    clear: clear_filters
-  }, {}, {})}
+  return `${validate_component(Common_hero, "CommonHero").$$render($$result, {}, {}, {})}
 
-<div class="${"container grid-cols-5 flex"}"><div class="${"col-span-1"}"></div>
-  <div class="${"container col-span-4 mx-auto w-5/6 p-2 items-start flex flex-wrap space-x-5 justify-evenly "}">${each(data_filtered, (p, i) => `${validate_component(Product, "Produto").$$render($$result, { order: i, data: p }, {}, {})}`)}</div></div>`;
+<section><h1 class="${"text-5xl bold mx-auto text-center"}">Pesquise por propriedades dispon\xEDveis
+  </h1>
+  ${validate_component(Items, "ItemsContent").$$render($$result, { data }, {}, {})}</section>`;
 });
 var buscar = /* @__PURE__ */ Object.freeze({
   __proto__: null,
@@ -6408,16 +6522,68 @@ var buscar = /* @__PURE__ */ Object.freeze({
   "default": Buscar,
   load: load$1
 });
+var css$1 = {
+  code: '.input-group-vertical.svelte-1jr0p8s .svelte-1jr0p8s:first-child{border-radius:0px !important;padding:0.75rem}.nome.svelte-1jr0p8s.svelte-1jr0p8s{font-family:"Lato"}',
+  map: null
+};
+var JoaldoContato = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let mensagem;
+  let { data } = $$props;
+  let nome = "";
+  let telefone = "";
+  let date = "";
+  if ($$props.data === void 0 && $$bindings.data && data !== void 0)
+    $$bindings.data(data);
+  $$result.css.add(css$1);
+  mensagem = `Ol\xE1 Joaldo,${nome.length > 1 ? ` me chamo ${nome} e ` : ""} gostaria de entrar em contato sobre o im\xF3vel ${data.titulo}${date.length > 1 ? " , na data de " + date : ""}.
+	${telefone.length > 1 ? "Voc\xEA pode entrar em contato comigo pelo telefone " + telefone : ""}`;
+  return `<div class="${"col-span-1 w-96 space-y-4 shadow bg-white dark:bg-neutral "}"><div class="${"info flex flex-col space-y-2 text-center p-5"}"><img alt="${"profile"}" src="${"pp.jpeg"}" class="${"mx-auto h-52 -mt-20 text-sm text-neutral"}">
+		<span class="${"nome text-2xl svelte-1jr0p8s"}">Joaldo Mendon\xE7a</span>
+		<span class="${"telefone"}">77 7777777</span>
+		<span class="${"ende"}">Shopping XXXXXXXXX n XX</span></div>		
+	<div class="${"mensagem space-y-4 p-4"}"><div class="${"form-control "}"><label class="${"input-group input-group-vertical  svelte-1jr0p8s"}"><input type="${"text"}" placeholder="${"Nome"}" class="${"input svelte-1jr0p8s"}"${add_attribute("value", nome, 0)}></label></div>
+		<div class="${"form-control"}"><label class="${"input-group input-group-vertical  svelte-1jr0p8s"}"><input type="${"text"}" placeholder="${"Telefone"}" class="${"input svelte-1jr0p8s"}"${add_attribute("value", telefone, 0)}></label></div>
+		<div class="${"form-control"}"><label class="${"input-group input-group-vertical  svelte-1jr0p8s"}"><input type="${"date"}" placeholder="${"Data"}" class="${"input svelte-1jr0p8s"}"${add_attribute("value", date, 0)}></label></div>
+		<div class="${"form-control"}"><label class="${"input-group input-group-vertical  svelte-1jr0p8s"}"><textarea class="${"textarea h-24 textarea-bordered svelte-1jr0p8s"}" placeholder="${"Bio"}">${mensagem || ""}</textarea></label></div>
+		<div class="${"actions gap-1 grid-cols-2 grid"}"><button class="${"btn bg-primary rounded-none w-auto"}"><svg xmlns="${"http://www.w3.org/2000/svg"}" class="${"h-6 w-6 mr-1"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}"><path d="${"M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"}"></path></svg>
+				Whatsapp
+			</button>
+			<button class="${"btn bg-primary rounded-none w-auto"}"><svg xmlns="${"http://www.w3.org/2000/svg"}" class="${"h-6 w-6"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"}"></path></svg>
+				Email
+			</button></div></div>
+</div>`;
+});
+var css = {
+  code: ".container.grid.svelte-vbz9kt{width:70%;margin-left:13% ;box-sizing:content-box;grid-template-columns:auto 250px}",
+  map: null
+};
+var Product_single = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { data } = $$props;
+  if ($$props.data === void 0 && $$bindings.data && data !== void 0)
+    $$bindings.data(data);
+  $$result.css.add(css);
+  return `<div class="${"container grid gap-14 my-32 svelte-vbz9kt"}"><div class="${"container shadow bg-white p-6"}"><section>fotos
+		</section>
+		<section>descri\xE7\xE3o
+		</section>
+		<section>features
+		</section>
+		<section>mapa
+		</section></div>
+	${validate_component(JoaldoContato, "Contato").$$render($$result, { data }, {}, {})}
+</div>`;
+});
 async function load({ page, fetch: fetch2 }) {
   const slug = page.params.slug;
-  const post = await fetch2(`${slug}.json`).then((r) => r.json());
-  return { props: { post } };
+  const data = await fetch2(`${slug}.json`).then((r) => r.json());
+  return { props: { data } };
 }
 var U5Bslugu5D = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let { post } = $$props;
-  if ($$props.post === void 0 && $$bindings.post && post !== void 0)
-    $$bindings.post(post);
-  return ``;
+  let { data } = $$props;
+  if ($$props.data === void 0 && $$bindings.data && data !== void 0)
+    $$bindings.data(data);
+  return `${validate_component(Common_hero, "CommonHero").$$render($$result, {}, {}, {})}
+${validate_component(Product_single, "Produto").$$render($$result, { data }, {}, {})}`;
 });
 var _slug_ = /* @__PURE__ */ Object.freeze({
   __proto__: null,
