@@ -1,5 +1,5 @@
 import fs from 'fs';
-let data = fs.readdirSync(`static/propriedades/`);
+let data = fs.readdirSync(`static/propriedades/`, (err) => console.log(err));
 
 if(data.length>0)
 data = data
