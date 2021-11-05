@@ -1,0 +1,24 @@
+{
+  "loc": "{\"type\":\"Point\",\"coordinates\":[-40.8777237,-14.8527572]}",
+  "loc_name": "Vitória da Conquista",
+  "disponibilidade": true,
+  "negocio": {
+    "venda": {
+      "disponivel_em": "2021-11-05T08:06:40.296Z"
+    },
+    "aluguel": {
+      "disponivel_em": "2021-11-05T08:06:40.358Z"
+    }
+  },
+  "fotos": [
+    {
+      "foto": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=773&q=80"
+    }
+  ],
+  "desc": "ontrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, ve",
+  "qnt": 1,
+  "tags": [
+    "Nova propriedade"
+  ],
+  "titulo": "Propriedade Nova"
+}
