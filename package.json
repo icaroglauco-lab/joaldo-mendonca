@@ -7,7 +7,6 @@
 		"preview": "node propriedades_gen.js && svelte-kit preview"
 	},
 	"devDependencies": {
-		"@beyonk/svelte-carousel": "^2.8.0",
 		"@smui/button": "^5.0.0-beta.7",
 		"@smui/checkbox": "^5.0.0-beta.7",
 		"@smui/form-field": "^5.0.0-beta.7",
@@ -16,8 +15,10 @@
 		"autoprefixer": "^10.3.7",
 		"concurrently": "^6.3.0",
 		"cross-env": "^7.0.3",
+		"leaflet": "^1.7.1",
 		"postcss-cli": "^9.0.1",
 		"svelte": "^3.44.0",
+		"svelte-leafletjs": "^0.8.0",
 		"tailwindcss": "^2.2.17"
 	},
 	"type": "module",

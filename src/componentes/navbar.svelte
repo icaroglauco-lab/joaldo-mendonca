@@ -50,7 +50,7 @@
 
 <style>
     .navbar{
-        z-index: 1000;
+        z-index: 100000;
         position: fixed;
         width: 100%;
         top: 0px;

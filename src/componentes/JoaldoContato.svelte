@@ -17,6 +17,8 @@
 		<span class="ende">Shopping XXXXXXXXX n XX</span>
 	</div>		
 	<div class="mensagem space-y-4 p-4">
+		<div class="divider"></div>
+		<h2 class="ml-3">Entre em contato</h2>
 		<div class="form-control ">
 		  <label class="  input-group input-group-vertical ">
 		  	<input type="text" bind:value={nome} placeholder="Nome" class="input">
