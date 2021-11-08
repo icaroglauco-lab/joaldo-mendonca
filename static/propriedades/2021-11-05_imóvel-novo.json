@@ -30,6 +30,12 @@
   "features": [
     {
       "feature": "Preço acessível"
+    },
+    {
+      "feature": "Localização Urbana"
+    },
+    {
+      "feature": "100m2"
     }
   ]
 }
