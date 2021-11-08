@@ -2,9 +2,9 @@
 	"name": "~TODO~",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "node propriedades_gen.js && svelte-kit dev",
-		"build": "node propriedades_gen.js && svelte-kit build",
-		"preview": "node propriedades_gen.js && svelte-kit preview"
+		"dev": "node json_gen.js && svelte-kit dev",
+		"build": "node json_gen.js && svelte-kit build",
+		"preview": "node json_gen.js && svelte-kit preview"
 	},
 	"devDependencies": {
 		"@smui/button": "^5.0.0-beta.7",

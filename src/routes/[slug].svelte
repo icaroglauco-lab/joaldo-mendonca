@@ -23,7 +23,7 @@
 
 <CommonHero />
 
-<h1 class="text-3xl ml-48 mt-14">{data.titulo}<small>/ {data.tags.join(', ')}{'.'}</small></h1>
+<h1 class="text-3xl ml-48 mt-14"><small>.| </small>{data.titulo}<small>/ {data.tags.join(', ')}{'.'}</small></h1>
 
 <div class="container grid gap-14 my-32">
   <div class="container shadow  bg-white p-6">
@@ -69,7 +69,7 @@
 
   .container.grid {
     width: 70%;
-    margin-top: 28rem;
+    margin-top: 25rem;
     margin-left: 13% ;
     box-sizing: content-box;
     grid-template-columns: auto 250px;

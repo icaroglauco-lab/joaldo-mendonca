@@ -38,11 +38,11 @@
                 Entre em contato
               
         </a> 
-        <span class="btn btn-ghost btn-sm rounded-btn font-thin">
+        <a href="https://api.whatsapp.com/send/?phone=5577999607779&app_absent=0" target="_blank" class="btn btn-ghost btn-sm rounded-btn font-thin">
             <i class="fab fa-whatsapp-square inline-block w-5 mr-2 stroke-current"></i>
-                (77) 9999999
+                (77) 999607779
               
-        </span> 
+        </a> 
       </div>
     </div> 
   </div>
