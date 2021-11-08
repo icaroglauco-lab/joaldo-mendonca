@@ -12,34 +12,9 @@
 
 <script>
   export let data;
-  import {onMount} from 'svelte';
   import Contato from '../componentes/JoaldoContato.svelte'  
   import CommonHero from '../componentes/common_hero.svelte';
-
-  import { browser } from '$app/env';
-
-  onMount(async () => {
-      if(browser) {
-          const leaflet = await import('leaflet');
-          const token = "pk.eyJ1IjoiaWNhcm9nbGF1Y28iLCJhIjoiY2t2Nm5udDY1MmJmMjMxcTFsN3JkY3l6OSJ9.1mjbLFat6x6R2Fby4oXHZw";
-          const l = JSON.parse(data.loc).coordinates.reverse();
-
-          const map = leaflet.map('map').setView(l, 13);
-
-          leaflet.tileLayer(`https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${token}`, {
-              attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-              maxZoom: 18,
-              id: 'mapbox/streets-v11',
-              tileSize: 512,
-              zoomOffset: -1,
-              accessToken: token
-          }).addTo(map);
-
-          leaflet.marker(l).addTo(map)
-              .bindPopup(data.titulo)
-              .openPopup();
-      }
-  });
+  import MapView from '../componentes/MapView.svelte';
 
   let c_foto = 0;
 
@@ -48,7 +23,7 @@
 
 <CommonHero />
 
-<h1 class="text-3xl ml-48 mt-14">{data.titulo}</h1>
+<h1 class="text-3xl ml-48 mt-14">{data.titulo}<small>/ {data.tags.join(', ')}{'.'}</small></h1>
 
 <div class="container grid gap-14 my-32">
   <div class="container shadow  bg-white p-6">
@@ -83,18 +58,14 @@
     </section>
     <section>
       <h3 class="text-lg mb-6">Mapa</h3>
-      <div id="map">
-      </div>
+      <MapView titulo={data.titulo} loc={data.loc} />
     </section>
   </div>
-  <Contato data={data} />
+  <Contato data={data} classList="-mt-72"/>
 </div>
 
 <style type="text/css">
   @import 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css';
-  #map {
-    height: 300px;
-  }
 
   .container.grid {
     width: 70%;
@@ -104,6 +75,11 @@
     grid-template-columns: auto 250px;
   }
 
+  h1 small{
+    margin-left: 15px;
+    font-weight: 100;
+    font-size: small;
+  }
 
   h3{
     font-style: italic;
