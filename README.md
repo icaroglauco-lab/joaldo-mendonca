@@ -1,1 +1,0 @@
-# Joaldo Mendonça website code
