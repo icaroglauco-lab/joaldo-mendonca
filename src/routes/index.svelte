@@ -1,0 +1,214 @@
+<script>
+</script>
+
+<div class="flex-none absolute right-10  top-4">
+  <button class="btn btn-square rounded-none btn-ghost
+    bg-secondary hover:bg-secondary hover:text-primary ">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current">           
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>               
+    </svg>
+  </button>
+</div>
+
+<div class="absolute h-2 w-full top-0 bg-secondary"></div>
+
+<div class="out-wrapper">
+
+  
+  
+  <div class="container mx-auto flex-col py-10 pt-6">
+    <div class="navbar  mb-2 bg-transparent text-neutral-content justify-between">
+      <div class="flex-none ml-10 relative">
+        <img src="/logo.png" id="logo" class="w-40 ml-20" alt="Logo">
+        <svg id="l1" xmlns="http://www.w3.org/2000/svg" width="390" height="11" fill="none" viewBox="0 0 390 11">
+          <path fill="#FF914D" d="M0 0h350v3.3H0zM40 7.7h350V11H40z"/>
+        </svg>     
+      </div> 
+      <div class="links grid pr-40 space-y-7 w-6/12">
+        <ul class="comum flex flex-row space-x-5 text-lg justify-evenly text-secondary">
+          <li><a href="">CONTATO</a></li>
+          <li><a href="">SOBRE</a></li>
+          <li><a href="">PROPRIEDADES</a></li>
+        </ul>
+        <div class="procura border-2 border-none h-28">
+  
+        </div>
+        <ul class="categorias flex flex-row space-x-5 text-lg justify-evenly text-primary">
+          <li><a href="">CHACREAMENTOS</a></li>
+          <li><a href="">IMÓVEIS URBANOS</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="carousel mx-auto mb-10" id="campanhas">
+      <div id="item1" class="w-full carousel-item">
+        <img src="https://picsum.photos/id/500/800/300" class="w-full">
+      </div> 
+      <!-- <div id="item2" class="w-full shadow-inner carousel-item">
+        <img src="https://picsum.photos/id/501/800/300" class="w-full">
+      </div> 
+      <div id="item3" class="w-full shadow-inner carousel-item">
+        <img src="https://picsum.photos/id/502/800/300" class="w-full">
+      </div> 
+      <div id="item4" class="w-full carousel-item">
+        <img src="https://picsum.photos/id/503/800/300" class=" shadow-inner w-full">
+      </div> -->
+    </div> 
+    <div class="flex justify-center w-full py-4 space-x-2">
+      <a href="#item1" class="btn btn-xs btn-circle">1</a> 
+      <a href="#item2" class="btn btn-xs btn-circle">2</a> 
+      <a href="#item3" class="btn btn-xs btn-circle">3</a> 
+      <a href="#item4" class="btn btn-xs btn-circle">4</a>
+    </div>
+    <svg class="linhas_geometricas" id="l3" xmlns="http://www.w3.org/2000/svg" width="321" height="526" fill="none" viewBox="0 0 321 526">
+      <path fill="#FF914D" d="M20.56 243.901l484.779-2.06-1.799 4.694-484.78 2.06zM71.765 254.617l484.78-2.06-1.799 4.694-484.78 2.06zM14.893 276.726l484.78-2.06-1.8 4.694-484.78 2.06z"/>
+    </svg>
+    <svg class="linhas_geometricas" id="l2" xmlns="http://www.w3.org/2000/svg" width="10" height="390" fill="none" viewBox="0 0 10 390">
+      <path fill="#FF914D" d="M0 390V40h3v350zM7 350V0h3v350z"/>
+    </svg>
+  </div>
+</div>
+
+<input type="checkbox" id="agendamento" class="modal-toggle"> 
+<div id="agendamento" class="modal">
+  <div class="modal-box rounded-none glass">
+    <h2 class="p-4 bg-secondary text-white object-contain"
+      style="
+        display: block;
+        background-color: #1b8bed;
+        margin-left: 35%;
+        width: 28%;
+        margin-top: -8%;
+        margin-bottom: 5%;
+      "
+    >
+      Agendamento
+    </h2>
+    <div class="form-control">
+      <input type="date" placeholder="" class="input">
+    </div>
+    <div class="form-control">
+      <label class="label">
+        <span class="label-text">Nome</span>
+      </label> 
+      <input type="text" placeholder="Nome para contato" class="input">
+    </div>
+    <div class="form-control">
+      <label class="label">
+        <span class="label-text">Telefone</span>
+      </label> 
+      <input type="text" placeholder="99 9999-9999" class="input">
+    </div>
+    <div class="form-control">
+      <label class="label">
+        <span class="label-text">Email</span>
+      </label> 
+      <input type="text" placeholder="exemplo@email.com" class="input">
+    </div>
+    <div class="form-control mt-5">
+      <textarea class="textarea h-24" placeholder="Sua mensagem ..."></textarea>
+    </div>
+    <div class="modal-action">
+      <label for="agendamento" class="btn bg-primary rounded-none">Enviar</label> 
+      <label for="agendamento" class="btn rounded-none">Cancelar</label>
+    </div>
+  </div>
+</div>
+
+<section class="text-gray-800" style='background-image: url("/joel-filipe-RFDP7_80v5A-unsplash.jpg");background-size: 100% auto;background-position: 0% 13%;'>
+  <div class="container p-20 mx-auto justify-center flex flex-col">
+    <h2 class="text-2xl text-center p-6">
+      Propriedades em destaque
+    </h2>
+    <ul class="flex justify-center">
+      <li class="flex space-x-10">
+        <div class="card glass lg:card-side rounded-none" style="max-width: 65vw">
+          <figure>
+            <img src="https://picsum.photos/id/1005/400/250">
+          </figure> 
+          <div class="card-body">
+            <h2 class="card-title">Titulo</h2> 
+            <p>Descrição breve</p> 
+            <div class="card-actions">
+              <label for="agendamento" class="btn rounded-none bg-secondary border-none modal-button">Agende agora uma visita</label> 
+              <button class="btn btn-ghost rounded-none border-primary text-gray-700 hover:border-primary">Mais informação</button>
+            </div>
+          </div>
+        </div> 
+
+      </li>
+    </ul>
+
+    <div class="btn bg-primary rounded-full border-none mx-auto my-14  text-gray-50">Veja mais</div>
+  </div>
+</section>
+
+
+
+
+<section class="bg-white">
+  <div class="container mx-auto px-24 py-24  flex flex-col justify-between" style="min-height: 90vh">
+    <h3 class="text-xl text-secondary text-center px-7" style="color: rgba(3, 111, 255, 0.76);">
+      Regiões de chacreamento
+    </h3>
+    <div class="flex space-x-10 justify-evenly flex-wrap text-xl">
+      <span class="btn bg-gray-400 border-none rounded-full p-4 py-2 text-gray-50">Pé de galinha</span>
+      <span class="btn bg-gray-400 border-none rounded-full p-4 py-2 text-gray-50">Barra do choça</span>
+    </div>
+
+    <div class="w-full flex flex-row justify-between mt-5 px-32 space-x-10">
+        <div class="text-primary">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vitae voluptatum rem
+        </div>
+        <div class="text-primary">
+          facilis deserunt quos, id odit dolor cumque, possimus temporibus, dignissimos labore maxime magni eum consectetur error perspiciatis nostrum?
+        </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<style>
+  .out-wrapper{
+    background: #FFFFFF;
+    box-shadow: inset 0px -4px 1px rgba(0, 0, 0, 0.25);
+  }
+
+
+  #campanhas{
+    margin-top: 10vh;
+    max-width: 80vw;
+    box-sizing: border-box;
+    border-radius: 130px;
+  }
+
+  .linhas_geometricas{
+    display: inline;
+  }
+
+  #logo{
+    z-index: 2;
+  }
+  #l1{
+    position: absolute;
+    margin-left: -50%;
+    margin-bottom: -62%;
+    z-index: 1;
+  }
+
+  #l2{
+    left: 40px;
+    position: absolute;
+  }
+
+  #l3{
+    margin-top: -311px;
+    right: 0px;
+    position: absolute;
+  }
+
+</style>

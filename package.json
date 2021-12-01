@@ -1,0 +1,31 @@
+{
+	"name": "~TODO~",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "node json_gen.js && svelte-kit dev",
+		"build": "node json_gen.js && svelte-kit build",
+		"preview": "node json_gen.js && svelte-kit preview"
+	},
+	"devDependencies": {
+		"@smui/button": "^5.0.0-beta.7",
+		"@smui/checkbox": "^5.0.0-beta.7",
+		"@smui/form-field": "^5.0.0-beta.7",
+		"@sveltejs/adapter-netlify": "^1.0.0-next.29",
+		"@sveltejs/kit": "next",
+		"autoprefixer": "^10.3.7",
+		"concurrently": "^6.3.0",
+		"cross-env": "^7.0.3",
+		"leaflet": "^1.7.1",
+		"postcss-cli": "^9.0.1",
+		"svelte": "^3.44.0",
+		"svelte-leafletjs": "^0.8.0",
+		"tailwindcss": "^2.2.17"
+	},
+	"type": "module",
+	"dependencies": {
+		"@tailwindcss/typography": "^0.4.1",
+		"aos": "^2.3.4",
+		"daisyui": "^1.16.0",
+		"front-matter": "^4.0.2"
+	}
+}

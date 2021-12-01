@@ -1,0 +1,171 @@
+backend:
+  name: git-gateway
+  branch: main
+collections:
+  - name: Empreendimentos
+    label: empreendimentos
+    folder: static/empreendimentos
+    create: true
+    identifier_field: titulo
+    extension: json
+    slug: "empreendimento_{{slug}}"
+    fields:
+      # Detalhes informativos
+      - label: "Título"
+        name: "titulo"
+        widget: "string"
+      - label: "Descrição"
+        name: "desc"
+        widget: "markdown"
+      - label: "Localização (em mapa)"
+        name: "loc"
+        widget: "map"
+        default: "{ \"type\": \"Point\",\"coordinates\": [-40.8427477,-14.8519483]}"
+      # Galeria de imagens
+      - label: "Foto demonstrativa"
+        name: "foto"
+        widget: "image"
+        choose_url: true
+      - label: "Palavras-chave (ex: \"Lotemaneto Rural\")"
+        name: "tags"
+        widget: "list"
+        allow_add: true
+        add_to_top: true
+        fields: 
+          - label: "tag"
+            name: "tag"
+            widget: "string"
+
+  - name: propriedades
+    label: Propriedades
+    folder: static/propriedades
+    create: true
+    identifier_field: titulo
+    extension: json
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    fields:
+      
+      # Detalhes informativos
+      - label: "Título"
+        name: "titulo"
+        widget: "string"
+      - {label: "Descrição", name: "desc", widget: "markdown", required: true}
+
+      - {label: "Disponível (?)", name: "disponibilidade", widget: "boolean", default: true}
+      - label: "Localização"
+        name: "loc_name"
+        widget: "string"
+      - label: "Localização (em mapa)"
+        name: "loc"
+        widget: "map"
+        default: "{ \"type\": \"Point\",\"coordinates\": [-40.8427477,-14.8519483]}"
+      - label: "Quantidade disponível"
+        name: "qnt"
+        widget: "number"
+        value_type: "int"
+
+      - label: "Features"
+        name: "features"
+        widget: "list"
+        required: false
+        allow_add: true
+        fields: 
+          - label: "Feature"
+            name: "feature"
+            widget: "string"
+
+      # Galeria de imagens
+      - label: "Fotos demonstrativas"
+        name: "fotos"
+        widget: "list"
+        required: false
+        allow_add: true
+        fields: [{label: "Foto", name: "foto", widget: "image", choose_url: true, default: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=773&q=80", media_library: {config: {multiple: true}}}]
+    
+
+      # Pagamento
+      - label: "Forma de negociação"
+        name: "negocio"
+        widget: "object"
+        summary: "{{fields.label}}"
+        fields:
+          # Venda
+          - label: "Venda de propriedade"
+            name: "venda"
+            widget: "object"
+            fields:
+              - label: "Contrato (valor em R$)"
+                name: "contrato"
+                required: false
+                widget: "number"
+                value_type: "float"
+              - label: "Disponibilidade (data)"
+                name: "disponivel_em"
+                required: false
+                widget: "datetime"
+                date_format: "DD.MM.YYYY"
+                picker_utc: false
+          # Aluguel
+          - label: "Aluguel"
+            name: "aluguel"
+            widget: "object"
+            fields:
+              - label: "Valor mensal (valor em R$)"
+                name: "mensal"
+                required: false
+                widget: "number"
+                value_type: "float"
+              - label: "Contrato (valor em R$)"
+                name: "contrato"
+                required: false
+                widget: "number"
+                value_type: "float"
+              - label: "Disponibilidade (data)"
+                name: "disponivel_em"
+                required: false
+                widget: "datetime"
+                date_format: "DD.MM.YYYY"
+                picker_utc: false
+          # Lote
+          - label: "Loteamento"
+            name: "loteamento"
+            widget: "object"
+            fields:
+              - label: "Preço a vista (valor em R$)"
+                name: "price"
+                required: false
+                widget: "number"
+                value_type: "float"
+
+              - label: "Plano de parcelamento"
+                name: "parcelas_plano"
+                widget: "list"
+                required: false
+                allow_add: true
+                fields:
+                - label: "Número de parcelas"
+                  name: "parcelas_quantidade"
+                  widget: "number"
+                  value_type: "int"
+                  min: 1
+                - label: "Valor da parcela em R$"
+                  name: "pacelamento_valor"
+                  widget: "number"
+                  required: false
+                  value_type: "float"
+
+
+      # Organização 
+      - label: "Palavras-chave"
+        name: "tags"
+        widget: "list"
+        allow_add: true
+        add_to_top: true
+        default: ["Nova propriedade"]
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+# site_url: https://your-site.com
+# display_url: https://your-site.com
+# logo_url: https://your-site.com/images/logo.svg
