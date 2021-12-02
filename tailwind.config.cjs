@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       colors: {
         'primary': '#ff914d',
-        'secondary': '#004aad'
+        'secondary': '#004aad',
+        'light-secondary' : "rgba(3, 111, 255, 0.76)",
       }
     },
     fontFamily:{
@@ -15,7 +16,6 @@ module.exports = {
     }
   },
   plugins: [
-    require('@tailwindcss/typography'),
     require('daisyui'),
   ]
 }

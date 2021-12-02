@@ -1,25 +1,10 @@
-<div class="flex-none absolute left-10  top-4">
-    <button class="btn btn-square rounded-none btn-ghost
-      bg-secondary hover:bg-secondary hover:text-primary ">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current">           
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>               
-      </svg>
-    </button>
-  </div>
 
 
-<div class="navbar  mb-2 bg-transparent text-neutral-content justify-between flex items-start">
- 
-    <div class="links grid ml-36 mt-6 space-y-7 w-6/12">
-      <ul class="comum flex flex-row space-x-5 text-lg justify-evenly text-secondary">
-        <li><a href="">CONTATO</a></li>
-        <li><a href="">SOBRE</a></li>
-        <li><a href="">PROPRIEDADES</a></li>
-      </ul>
-    </div>
+<div class="navbar mt-6 mb-2 bg-transparent text-neutral-content justify-between flex items-start">
+
 
     <div class="flex-none mr-36 mt-12 -mb-20 relative">
-        <img src="/logo.png" id="logo" class="w-64 ml-20" alt="Logo">
+        <a href="/"><img src="/logo.png" id="logo" class="w-64 ml-20" alt="Logo"></a>
       </div> 
   </div>
 

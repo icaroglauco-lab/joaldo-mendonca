@@ -1,6 +1,7 @@
 <script type="text/javascript">
-      export let loc;
-      export let titulo
+      export let loc  = "{\"coordinates\": [-40.8420757,-14.8562588]}";
+      export let titulo;
+      export let styles;
       import { browser } from '$app/env';
       import {onMount} from 'svelte';
 
@@ -28,10 +29,11 @@
       });
 </script>
 
-<div id="map">
+<div id="map" style={styles}>
 </div>
 
 <style type="text/css">
+    @import 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css';
     #map {
         height: 350px;
     }

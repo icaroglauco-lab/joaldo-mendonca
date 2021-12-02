@@ -1,50 +1,23 @@
 <script>
+  import PropriedadeCard from "../componentes/propriedade_card.svelte";
+
 </script>
 
-<div class="flex-none absolute right-10  top-4">
-  <button class="btn btn-square rounded-none btn-ghost
-    bg-secondary hover:bg-secondary hover:text-primary ">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current">           
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>               
-    </svg>
-  </button>
-</div>
 
-<div class="absolute h-2 w-full top-0 bg-secondary"></div>
+
+
 
 <div class="out-wrapper">
 
   
   
-  <div class="container mx-auto flex-col py-10 pt-6">
-    <div class="navbar  mb-2 bg-transparent text-neutral-content justify-between">
-      <div class="flex-none ml-10 relative">
-        <img src="/logo.png" id="logo" class="w-40 ml-20" alt="Logo">
-        <svg id="l1" xmlns="http://www.w3.org/2000/svg" width="390" height="11" fill="none" viewBox="0 0 390 11">
-          <path fill="#FF914D" d="M0 0h350v3.3H0zM40 7.7h350V11H40z"/>
-        </svg>     
-      </div> 
-      <div class="links grid pr-40 space-y-7 w-6/12">
-        <ul class="comum flex flex-row space-x-5 text-lg justify-evenly text-secondary">
-          <li><a href="">CONTATO</a></li>
-          <li><a href="">SOBRE</a></li>
-          <li><a href="">PROPRIEDADES</a></li>
-        </ul>
-        <div class="procura border-2 border-none h-28">
-  
-        </div>
-        <ul class="categorias flex flex-row space-x-5 text-lg justify-evenly text-primary">
-          <li><a href="">CHACREAMENTOS</a></li>
-          <li><a href="">IMÓVEIS URBANOS</a></li>
-        </ul>
-      </div>
-    </div>
+  <div class="container mx-auto flex-col py-10 pt-40">
     
-    <div class="carousel mx-auto mb-10" id="campanhas">
+    <div class="carousel mx-auto mb-2" id="campanhas">
       <div id="item1" class="w-full carousel-item">
         <img src="https://picsum.photos/id/500/800/300" class="w-full">
       </div> 
-      <!-- <div id="item2" class="w-full shadow-inner carousel-item">
+      <div id="item2" class="w-full shadow-inner carousel-item">
         <img src="https://picsum.photos/id/501/800/300" class="w-full">
       </div> 
       <div id="item3" class="w-full shadow-inner carousel-item">
@@ -52,7 +25,7 @@
       </div> 
       <div id="item4" class="w-full carousel-item">
         <img src="https://picsum.photos/id/503/800/300" class=" shadow-inner w-full">
-      </div> -->
+      </div>
     </div> 
     <div class="flex justify-center w-full py-4 space-x-2">
       <a href="#item1" class="btn btn-xs btn-circle">1</a> 
@@ -115,40 +88,40 @@
   </div>
 </div>
 
-<section class="text-gray-800" style='background-image: url("/joel-filipe-RFDP7_80v5A-unsplash.jpg");background-size: 100% auto;background-position: 0% 13%;'>
+<section class="text-gray-800" style='
+  background-image: url("/joel-filipe-RFDP7_80v5A-unsplash.jpg");
+  background-size: cover;
+  background-position: 0% 13%;
+  background-repeat: no-repeat;
+'>
   <div class="container p-20 mx-auto justify-center flex flex-col">
     <h2 class="text-2xl text-center p-6">
       Propriedades em destaque
     </h2>
-    <ul class="flex justify-center">
-      <li class="flex space-x-10">
-        <div class="card glass lg:card-side rounded-none" style="max-width: 65vw">
-          <figure>
-            <img src="https://picsum.photos/id/1005/400/250">
-          </figure> 
-          <div class="card-body">
-            <h2 class="card-title">Titulo</h2> 
-            <p>Descrição breve</p> 
-            <div class="card-actions">
-              <label for="agendamento" class="btn rounded-none bg-secondary border-none modal-button">Agende agora uma visita</label> 
-              <button class="btn btn-ghost rounded-none border-primary text-gray-700 hover:border-primary">Mais informação</button>
-            </div>
-          </div>
-        </div> 
+    <div class="flex justify-center"
+      style="    
+        display: grid;
+        grid-template-columns: 50% 50%;
+        width: 100%;
+        grid-gap: 30px;"
+    >
+      <PropriedadeCard agendamento_botao={true} side={false} styles={"margin-bottom: 50px"}/>
+      <PropriedadeCard agendamento_botao={true} side={false} styles={"margin-bottom: 50px"}/>
+      <PropriedadeCard agendamento_botao={true} side={false} styles={"margin-bottom: 50px"}/>
+      <PropriedadeCard agendamento_botao={true} side={false} styles={"margin-bottom: 50px"}/>
+      <PropriedadeCard agendamento_botao={true} side={false} styles={"margin-bottom: 50px"}/>
+    </div>
 
-      </li>
-    </ul>
-
-    <div class="btn bg-primary rounded-full border-none mx-auto my-14  text-gray-50">Veja mais</div>
+    <a href="/items" class="btn bg-primary rounded-full border-none mx-auto my-14  text-gray-50">Veja mais</a>
   </div>
 </section>
 
 
 
 
-<section class="bg-white">
-  <div class="container mx-auto px-24 py-24  flex flex-col justify-between" style="min-height: 90vh">
-    <h3 class="text-xl text-secondary text-center px-7" style="color: rgba(3, 111, 255, 0.76);">
+<section class="bg-gray-50 shadow-inner">
+  <div class="container mx-auto px-24 py-32 flex flex-col justify-between" style="min-height: 90vh">
+    <h3 class="text-3xl text-secondary text-center px-7" style="color: rgba(3, 111, 255, 0.76);">
       Regiões de chacreamento
     </h3>
     <div class="flex space-x-10 justify-evenly flex-wrap text-xl">
@@ -174,7 +147,7 @@
 
 <style>
   .out-wrapper{
-    background: #FFFFFF;
+    background: #f5f5f5;
     box-shadow: inset 0px -4px 1px rgba(0, 0, 0, 0.25);
   }
 

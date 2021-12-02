@@ -50,20 +50,10 @@ collections:
         name: "titulo"
         widget: "string"
       - {label: "Descrição", name: "desc", widget: "markdown", required: true}
-
-      - {label: "Disponível (?)", name: "disponibilidade", widget: "boolean", default: true}
-      - label: "Localização"
-        name: "loc_name"
-        widget: "string"
       - label: "Localização (em mapa)"
         name: "loc"
         widget: "map"
         default: "{ \"type\": \"Point\",\"coordinates\": [-40.8427477,-14.8519483]}"
-      - label: "Quantidade disponível"
-        name: "qnt"
-        widget: "number"
-        value_type: "int"
-
       - label: "Features"
         name: "features"
         widget: "list"
@@ -73,6 +63,10 @@ collections:
           - label: "Feature"
             name: "feature"
             widget: "string"
+          - label: "Icone"
+            name: "feature_icon"
+            widget: "image"
+            choose_url: true
 
       # Galeria de imagens
       - label: "Fotos demonstrativas"
@@ -86,74 +80,12 @@ collections:
       # Pagamento
       - label: "Forma de negociação"
         name: "negocio"
-        widget: "object"
-        summary: "{{fields.label}}"
-        fields:
-          # Venda
-          - label: "Venda de propriedade"
-            name: "venda"
-            widget: "object"
-            fields:
-              - label: "Contrato (valor em R$)"
-                name: "contrato"
-                required: false
-                widget: "number"
-                value_type: "float"
-              - label: "Disponibilidade (data)"
-                name: "disponivel_em"
-                required: false
-                widget: "datetime"
-                date_format: "DD.MM.YYYY"
-                picker_utc: false
-          # Aluguel
-          - label: "Aluguel"
-            name: "aluguel"
-            widget: "object"
-            fields:
-              - label: "Valor mensal (valor em R$)"
-                name: "mensal"
-                required: false
-                widget: "number"
-                value_type: "float"
-              - label: "Contrato (valor em R$)"
-                name: "contrato"
-                required: false
-                widget: "number"
-                value_type: "float"
-              - label: "Disponibilidade (data)"
-                name: "disponivel_em"
-                required: false
-                widget: "datetime"
-                date_format: "DD.MM.YYYY"
-                picker_utc: false
-          # Lote
-          - label: "Loteamento"
-            name: "loteamento"
-            widget: "object"
-            fields:
-              - label: "Preço a vista (valor em R$)"
-                name: "price"
-                required: false
-                widget: "number"
-                value_type: "float"
+        widget: "string"
 
-              - label: "Plano de parcelamento"
-                name: "parcelas_plano"
-                widget: "list"
-                required: false
-                allow_add: true
-                fields:
-                - label: "Número de parcelas"
-                  name: "parcelas_quantidade"
-                  widget: "number"
-                  value_type: "int"
-                  min: 1
-                - label: "Valor da parcela em R$"
-                  name: "pacelamento_valor"
-                  widget: "number"
-                  required: false
-                  value_type: "float"
-
+      - label: "Valor (R$)"
+        name: "preço"
+        widget: "number"
+        value_type: "float"
 
       # Organização 
       - label: "Palavras-chave"
