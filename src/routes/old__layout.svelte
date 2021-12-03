@@ -1,13 +1,10 @@
 <script type="text/javascript">
-  import Footer from './../componentes/footer.svelte';
-	import Navbar from './../componentes/navbar.svelte';
+  
 </script>
 
-<Navbar/>
 
 <slot />
 
-<Footer/>
 
 <style type="text/css">
   @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Noto+Sans:ital@0;1&family=Ruluko&display=swap');
