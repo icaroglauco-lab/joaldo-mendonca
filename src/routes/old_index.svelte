@@ -9,19 +9,19 @@
 </script>
 
 <script type="text/javascript">
-	import JoaldoMendoncaSec from '../componentes/JoaldoMendonca.svelte'
-	import ItemsContent from '../componentes/items.svelte'
-	import LandingHeroSection from '../componentes/landingHero.svelte';
+// 	import JoaldoMendoncaSec from '../componentes/JoaldoMendonca.svelte'
+// 	import ItemsContent from '../componentes/items.svelte'
+// 	import LandingHeroSection from '../componentes/landingHero.svelte';
   	export let data;
 </script>
 
-<LandingHeroSection></LandingHeroSection>
+<!-- <LandingHeroSection></LandingHeroSection> -->
 
 <section class="px-6">
 	<h2 class="text-3xl mx-auto text-center font-header">
 		Aqui algumas de nossas propriedades disponíveis
 	</h2>
-	<ItemsContent data={data} maxitems={3}/>
+<!-- 	<ItemsContent data={data} maxitems={3}/> -->
 </section>
 
 <div class="divider">
@@ -31,4 +31,4 @@
 	  </svg>
 </div> 
 
-<JoaldoMendoncaSec/>
+<!-- <JoaldoMendoncaSec/> -->
