@@ -11,7 +11,7 @@
 
   
   
-  <div class="container mx-auto flex-col py-10 pt-40">
+  <div class="container mx-auto flex-col py-10 pt-20">
     
     <div class="carousel mx-auto mb-2" id="campanhas">
       <div id="item1" class="w-full carousel-item">
@@ -155,6 +155,7 @@
   #campanhas{
     margin-top: 10vh;
     max-width: 80vw;
+    width: 700px;
     box-sizing: border-box;
     border-radius: 130px;
   }
