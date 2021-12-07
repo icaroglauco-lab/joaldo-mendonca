@@ -9,25 +9,46 @@
 
 <div class="out-wrapper">
 
+  <div class="text-secondary w-80 relative px-10 py-6 ml-auto right-0 top-0 text-base z-30 lg:-mb-20
+
+    md:absolute
+    md:w-auto
+    md:text-right
+    md:right-10
+    md:top-2
+   " 
+  >
+  Joaldo Mendonça Imóveis<br/>
+  Imóveis no lugar certo, com as melhores condições  
+  </div>
   
-  
-  <div class="container mx-auto flex-col py-10 pt-20">
+  <div class="container mx-auto flex-col py-10 
+    pt-10
+    sm:pt-20">
     
-    <div class="carousel mx-auto mb-2" id="campanhas">
+    <div class="carousel mx-auto mb-2
+      w-full
+      relative
+      z-20
+      lg:w-5/6
+      " id="campanhas">
       <div id="item1" class="w-full carousel-item">
-        <img src="https://picsum.photos/id/500/800/300" class="w-full">
+        <img src="https://picsum.photos/id/500/800/300" class="w-full object-cover lg:pt-20">
       </div> 
       <div id="item2" class="w-full shadow-inner carousel-item">
-        <img src="https://picsum.photos/id/501/800/300" class="w-full">
+        <img src="https://picsum.photos/id/501/800/300" class="w-full object-cover lg:pt-20">
       </div> 
       <div id="item3" class="w-full shadow-inner carousel-item">
-        <img src="https://picsum.photos/id/502/800/300" class="w-full">
+        <img src="https://picsum.photos/id/502/800/300" class="w-full object-cover lg:pt-20">
       </div> 
       <div id="item4" class="w-full carousel-item">
-        <img src="https://picsum.photos/id/503/800/300" class=" shadow-inner w-full">
+        <img src="https://picsum.photos/id/503/800/300" class="  object-cover w-full lg:pt-20">
       </div>
     </div> 
-    <div class="flex justify-center w-full py-4 space-x-2">
+    <div class="flex 
+        relative
+        z-20 
+      justify-center w-full py-4 space-x-2">
       <a href="#item1" class="btn btn-xs btn-circle">1</a> 
       <a href="#item2" class="btn btn-xs btn-circle">2</a> 
       <a href="#item3" class="btn btn-xs btn-circle">3</a> 
@@ -94,22 +115,44 @@
   background-position: 0% 13%;
   background-repeat: no-repeat;
 '>
-  <div class="container p-20 mx-auto justify-center flex flex-col">
+  <div class="container p-5 sm:p-20 mx-auto justify-center flex flex-col">
     <h2 class="text-2xl text-center p-6">
       Propriedades em destaque
     </h2>
-    <div class="flex justify-center"
-      style="    
-        display: grid;
-        grid-template-columns: 50% 50%;
-        width: 100%;
-        grid-gap: 30px;"
+    <div class="
+      grid 
+      justify-center
+      grid-cols-1
+      w-full
+      space-y-5
+      lg:space-x-5
+      lg:grid-cols-2
+      "
     >
-      <PropriedadeCard agendamento_botao={true} side={false} styles={"margin-bottom: 50px"}/>
-      <PropriedadeCard agendamento_botao={true} side={false} styles={"margin-bottom: 50px"}/>
-      <PropriedadeCard agendamento_botao={true} side={false} styles={"margin-bottom: 50px"}/>
-      <PropriedadeCard agendamento_botao={true} side={false} styles={"margin-bottom: 50px"}/>
-      <PropriedadeCard agendamento_botao={true} side={false} styles={"margin-bottom: 50px"}/>
+      <PropriedadeCard agendamento_botao={true} side={false} 
+        classes="mx-auto mt-5"
+      />
+      <PropriedadeCard agendamento_botao={true} side={false} 
+        classes="mx-auto mt-5"
+      />
+      <PropriedadeCard agendamento_botao={true} side={false} 
+        classes="mx-auto mt-5"
+      />
+      <PropriedadeCard agendamento_botao={true} side={false} 
+        classes="mx-auto mt-5"
+      />
+      <PropriedadeCard agendamento_botao={true} side={false} 
+        classes="mx-auto mt-5"
+      />
+      <PropriedadeCard agendamento_botao={true} side={false} 
+        classes="mx-auto mt-5"
+      />
+      <PropriedadeCard agendamento_botao={true} side={false} 
+        classes="mx-auto mt-5"
+      />
+      <PropriedadeCard agendamento_botao={true} side={false} 
+        classes="mx-auto mt-5"
+      />
     </div>
 
     <a href="/items" class="btn bg-primary rounded-full border-none mx-auto my-14  text-gray-50">Veja mais</a>
@@ -120,7 +163,12 @@
 
 
 <section class="bg-gray-50 shadow-inner">
-  <div class="container mx-auto px-24 py-32 flex flex-col justify-between" style="min-height: 90vh">
+  <div class="
+    container mx-auto flex flex-col justify-between
+    p-5 py-20
+    space-y-16
+    lg:px-24 lg:py-32 
+    " style="min-height: 90vh">
     <h3 class="text-3xl text-secondary text-center px-7" style="color: rgba(3, 111, 255, 0.76);">
       Regiões de chacreamento
     </h3>
@@ -129,7 +177,10 @@
       <span class="btn bg-gray-400 border-none rounded-full p-4 py-2 text-gray-50">Barra do choça</span>
     </div>
 
-    <div class="w-full flex flex-row justify-between mt-5 px-32 space-x-10">
+    <div class="w-full flex flex-row justify-between mt-5 
+    lg:px-32
+    px-10
+    space-x-10">
         <div class="text-primary">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus vitae voluptatum rem
         </div>
@@ -154,10 +205,11 @@
 
   #campanhas{
     margin-top: 10vh;
-    max-width: 80vw;
-    width: 700px;
     box-sizing: border-box;
-    border-radius: 130px;
+    min-height: 28rem;
+  }
+
+  #campanhas img{
   }
 
   .linhas_geometricas{

@@ -11,9 +11,10 @@
     export let glass=  true;
     export let side= false;
     export let styles=""
+    export let classes=""
 </script>
 
-  <div class={`card glass  rounded-none ${side? "lg:card-side": ""} ${glass? "": "shadow-none bg-white"} `} style={`${styles}; max-width: 65vw`}>
+  <div class={`${classes} card glass  rounded-none ${side? "lg:card-side": ""} ${glass? "": "shadow-none bg-white"} `} style={`${styles}; max-width: 65vw`}>
     <figure>
       <img src={data.fotos[0]} alt={data.fotos[0]}>
     </figure> 

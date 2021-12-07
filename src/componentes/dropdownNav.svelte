@@ -37,7 +37,7 @@ import { text } from 'svelte/internal';
 
 </script>
 
-<div class="flex-none right-0 text-right top-4 sticky -mb-20 z-30">
+<div class="flex-none right-0 text-right top-4 sticky -mb-20 z-50">
 
     <button 
           on:click={() => toggle=!toggle}

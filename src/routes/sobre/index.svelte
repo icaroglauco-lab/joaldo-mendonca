@@ -9,16 +9,27 @@
   </div>
 
 
-  <section class="relative">
+  <section class="relative overflow-hidden">
 
     
     <svg id="backeffect" class="z-0" xmlns="http://www.w3.org/2000/svg" width="1422" height="475" fill="none" viewBox="0 0 1422 475">
         <path fill="#F0F0F0" d="M-18 0h1440v475H-18z"/>
       </svg>
 
-      <div class="mx-auto px-44 container my-32 space-x-20 flex flex-row ">
+      <div class="mx-auto  container 
+        lg:px-44
+        my-32 
+        lg:space-x-20 
+        space-y-20
+        flex 
+        flex-col
+        space-y-5
+        lg:flex-row ">
 
-        <div class="conteudo space-y-10 z-10 text-gray-800">
+        <div class="conteudo space-y-10 z-10 
+            p-10 
+            lg:p-0
+            text-gray-800">
             <h2 class="titulo text-3xl my-5 text-secondary">
                 Joaldo Mendonça Imóveis
             </h2>
@@ -30,7 +41,7 @@
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem, provident alias odit quod dolore ea facere dignissimos consequuntur odio amet unde natus aut. Nesciunt exercitationem deserunt expedita ipsum, a similique?
             </div>
 
-            <div class="mt-20">
+            <div class="mt-20 text-sm">
                 <span class="">
                     77 777777777
                 </span>
@@ -43,8 +54,8 @@
             </div>
         </div>
 
-        <div class="pp">
-            <div id="pp">
+        <div class="pp p-10 lg:p-0">
+            <div id="pp" class="w-96 h-80 inline-block float-left mr-5 mb-20">
 
             </div>
             <div class="desc text-gray-800 space-y-5 mt-10">
@@ -76,12 +87,14 @@
             background-position: center;
       }
       #pp{
-        width: 449px;
+/*         width: 449px;
         height: 467px;
         left: 848px;
-        top: 499px;
+        top: 499px; */
 
         background: url(/pp.jpeg);
+        background-position: center;
+        background-size: cover;
         border: 1px solid #FFFFFF;
         box-sizing: border-box;
         filter: drop-shadow(7px 30px 10px rgba(0, 0, 0, 0.21));

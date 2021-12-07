@@ -1,9 +1,7 @@
 
-<footer class=" footer shadow-inner text-gray-900 h-64 p-10 flex flex-col">
+<footer class=" footer shadow-inner text-gray-900 h-64 lg:p-10 pt-5 flex flex-col">
  
-    <div class="p-10 flex justify-evenly mx-auto w-8/12" style="
-          backdrop-filter: blur(6px);
-      ">
+    <div class="p-5 lg:p-10 flex flex-wrap justify-evenly mx-auto lg:w-8/12 w-10/12 backdrop-filter backdrop-blur " style="background-color:rgba(247, 245, 245, 0.24);">
       <div class="flex flex-col">
         <span class="footer-title">Joaldo Mendonça Imóveis</span> 
         <a class="link link-hover" href="/">Início</a>
@@ -16,19 +14,14 @@
         <a href="/urbanos" class="link link-hover">Urbanos</a> 
       </div> 
 
-      <div class="self-end">     
-        <img src="/logo.png" class="ml-auto mr-10" alt=""
-        
-          style="
-            z-index: 2;
-            width: 140px;
-            height: 100px;
-          "
+      <div class="">     
+        <img src="/logo.png" class="h-24" alt=""
         >
       </div>
       
     </div>
     
+   
    
 </footer>
   
@@ -36,8 +29,9 @@
     footer{
       background-color: rgba(36, 119, 228, 0.877);
       background-image: url(https://images.unsplash.com/photo-1560184897-ae75f418493e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);
+      background-repeat: no-repeat;
+      background-size: cover;
     }
     footer img{
-      margin-right: -40px;
     }
   </style>

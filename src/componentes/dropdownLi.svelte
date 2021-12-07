@@ -2,12 +2,13 @@
     import SelfDropdownMenu from './selfDropdownMenu.svelte';
     let toggle;
     export let data;
-    export let nv = 0;
 </script>
 
-<li href={data.href}
-    class={`z-${nv} btn relative overflow-visible bg-light-secondary grid rounded-none border-none px-3 hover:bg-primary`} on:click={()=> toggle=!toggle}>
+<li
+    class={`z-50 btn relative overflow-visible bg-light-secondary grid rounded-none border-none px-3 hover:bg-primary`} on:click={()=> toggle=!toggle}>
+   <a href={data.href}>
     {data.text}
+   </a> 
 </li>
 
 {#if data.items}
