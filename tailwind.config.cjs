@@ -7,6 +7,7 @@ module.exports = {
         'primary': '#ff914d',
         'secondary': '#004aad',
         'light-secondary' : "rgba(3, 111, 255, 0.76)",
+        'dark-title-bg': "#001B2EF0"
       }
     },
     fontFamily:{
@@ -17,5 +18,7 @@ module.exports = {
   },
   plugins: [
     require('daisyui'),
-  ]
+  ],
+  content: ["./src/**/*.{html,js,svelte,ts}"],
+
 }

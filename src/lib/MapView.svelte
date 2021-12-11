@@ -38,5 +38,4 @@
 
 <style lang="sass">
     @import 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css'
-        
 </style>
