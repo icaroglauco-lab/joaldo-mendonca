@@ -167,7 +167,7 @@
     container mx-auto flex flex-col justify-between
     p-5 py-20
     space-y-16
-    lg:px-24 lg:py-32 
+    lg:px-44 lg:py-32 
     " style="min-height: 90vh">
     <h3 class="text-3xl text-secondary text-center px-7" style="color: rgba(3, 111, 255, 0.76);">
       Regiões de chacreamento
