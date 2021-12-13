@@ -55,8 +55,8 @@ function dataUriToBuffer(uri) {
     charset = "US-ASCII";
   }
   const encoding = base64 ? "base64" : "ascii";
-  const data2 = unescape(uri.substring(firstComma + 1));
-  const buffer = Buffer.from(data2, encoding);
+  const data = unescape(uri.substring(firstComma + 1));
+  const buffer = Buffer.from(data, encoding);
   buffer.type = type;
   buffer.typeFull = typeFull;
   buffer.charset = charset;
@@ -125,15 +125,15 @@ function getFormDataLength(form, boundary) {
   length += Buffer.byteLength(getFooter(boundary));
   return length;
 }
-async function consumeBody(data2) {
-  if (data2[INTERNALS$2].disturbed) {
-    throw new TypeError(`body used already for: ${data2.url}`);
+async function consumeBody(data) {
+  if (data[INTERNALS$2].disturbed) {
+    throw new TypeError(`body used already for: ${data.url}`);
   }
-  data2[INTERNALS$2].disturbed = true;
-  if (data2[INTERNALS$2].error) {
-    throw data2[INTERNALS$2].error;
+  data[INTERNALS$2].disturbed = true;
+  if (data[INTERNALS$2].error) {
+    throw data[INTERNALS$2].error;
   }
-  let { body } = data2;
+  let { body } = data;
   if (body === null) {
     return Buffer.alloc(0);
   }
@@ -150,8 +150,8 @@ async function consumeBody(data2) {
   let accumBytes = 0;
   try {
     for await (const chunk of body) {
-      if (data2.size > 0 && accumBytes + chunk.length > data2.size) {
-        const error2 = new FetchError(`content size at ${data2.url} over limit: ${data2.size}`, "max-size");
+      if (data.size > 0 && accumBytes + chunk.length > data.size) {
+        const error2 = new FetchError(`content size at ${data.url} over limit: ${data.size}`, "max-size");
         body.destroy(error2);
         throw error2;
       }
@@ -159,7 +159,7 @@ async function consumeBody(data2) {
       accum.push(chunk);
     }
   } catch (error2) {
-    const error_ = error2 instanceof FetchBaseError ? error2 : new FetchError(`Invalid response body while trying to fetch ${data2.url}: ${error2.message}`, "system", error2);
+    const error_ = error2 instanceof FetchBaseError ? error2 : new FetchError(`Invalid response body while trying to fetch ${data.url}: ${error2.message}`, "system", error2);
     throw error_;
   }
   if (body.readableEnded === true || body._readableState.ended === true) {
@@ -169,10 +169,10 @@ async function consumeBody(data2) {
       }
       return Buffer.concat(accum, accumBytes);
     } catch (error2) {
-      throw new FetchError(`Could not create Buffer from response body for ${data2.url}: ${error2.message}`, "system", error2);
+      throw new FetchError(`Could not create Buffer from response body for ${data.url}: ${error2.message}`, "system", error2);
     }
   } else {
-    throw new FetchError(`Premature close of server response while trying to fetch ${data2.url}`);
+    throw new FetchError(`Premature close of server response while trying to fetch ${data.url}`);
   }
 }
 function fromRawHeaders(headers = []) {
@@ -199,8 +199,8 @@ async function fetch(url, options_) {
       throw new TypeError(`node-fetch cannot load ${url}. URL scheme "${options2.protocol.replace(/:$/, "")}" is not supported.`);
     }
     if (options2.protocol === "data:") {
-      const data2 = dataUriToBuffer$1(request.url);
-      const response2 = new Response(data2, { headers: { "Content-Type": data2.typeFull } });
+      const data = dataUriToBuffer$1(request.url);
+      const response2 = new Response(data, { headers: { "Content-Type": data.typeFull } });
       resolve2(response2);
       return;
     }
@@ -4053,13 +4053,13 @@ var init_install_fetch = __esm({
         return str;
       }
       async arrayBuffer() {
-        const data2 = new Uint8Array(this.size);
+        const data = new Uint8Array(this.size);
         let offset = 0;
         for await (const chunk of toIterator(this.#parts, false)) {
-          data2.set(chunk, offset);
+          data.set(chunk, offset);
           offset += chunk.length;
         }
-        return data2.buffer;
+        return data.buffer;
       }
       stream() {
         const it = toIterator(this.#parts, true);
@@ -5242,9 +5242,9 @@ async function render_response({
     body: options2.template({ head, body })
   };
 }
-function try_serialize(data2, fail) {
+function try_serialize(data, fail) {
   try {
-    return devalue(data2);
+    return devalue(data);
   } catch (err) {
     if (fail)
       fail(coalesce_to_error(err));
@@ -5776,19 +5776,19 @@ function parse_body(raw, headers) {
   }
 }
 function get_urlencoded(text) {
-  const { data: data2, append } = read_only_form_data();
+  const { data, append } = read_only_form_data();
   text.replace(/\+/g, " ").split("&").forEach((str) => {
     const [key, value] = str.split("=");
     append(decodeURIComponent(key), decodeURIComponent(value));
   });
-  return data2;
+  return data;
 }
 function get_multipart(text, boundary) {
   const parts = text.split(`--${boundary}`);
   if (parts[0] !== "" || parts[parts.length - 1].trim() !== "--") {
     throw new Error("Malformed form data");
   }
-  const { data: data2, append } = read_only_form_data();
+  const { data, append } = read_only_form_data();
   parts.slice(1, -1).forEach((part) => {
     const match = /\s*([\s\S]+?)\r\n\r\n([\s\S]*)\s*/.exec(part);
     if (!match) {
@@ -5823,7 +5823,7 @@ function get_multipart(text, boundary) {
       throw new Error("Malformed form data");
     append(key, body);
   });
-  return data2;
+  return data;
 }
 async function respond(incoming, options2, state = {}) {
   if (incoming.path !== "/" && options2.trailing_slash !== "ignore") {
@@ -6000,12 +6000,12 @@ var init_ssr = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/footer-4985c2df.js
+// .svelte-kit/output/server/chunks/footer-d3b57ea0.js
 var SelfDropdownMenu, DropdownLi, DrodownMenu, DropdownNav, css, Footer;
-var init_footer_4985c2df = __esm({
-  ".svelte-kit/output/server/chunks/footer-4985c2df.js"() {
+var init_footer_d3b57ea0 = __esm({
+  ".svelte-kit/output/server/chunks/footer-d3b57ea0.js"() {
     init_shims();
-    init_app_34b05bfb();
+    init_app_98cc91c3();
     SelfDropdownMenu = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let dropdownStyle;
       let { toggle = false } = $$props;
@@ -6019,12 +6019,12 @@ var init_footer_4985c2df = __esm({
     });
     DropdownLi = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let toggle;
-      let { data: data2 } = $$props;
-      if ($$props.data === void 0 && $$bindings.data && data2 !== void 0)
-        $$bindings.data(data2);
-      return `<li${add_attribute("class", `z-50 btn relative overflow-visible bg-light-secondary grid rounded-none border-none px-3 hover:bg-primary`, 0)}><a${add_attribute("href", data2.href, 0)}>${escape2(data2.text)}</a></li>
+      let { data } = $$props;
+      if ($$props.data === void 0 && $$bindings.data && data !== void 0)
+        $$bindings.data(data);
+      return `<li${add_attribute("class", `z-50 btn relative overflow-visible bg-light-secondary grid rounded-none border-none px-3 hover:bg-primary`, 0)}><a${add_attribute("href", data.href, 0)}>${escape2(data.text)}</a></li>
 
-${data2.items ? `${validate_component(SelfDropdownMenu, "SelfDropdownMenu").$$render($$result, { toggle, items: data2.items }, {}, {})}` : ``}`;
+${data.items ? `${validate_component(SelfDropdownMenu, "SelfDropdownMenu").$$render($$result, { toggle, items: data.items }, {}, {})}` : ``}`;
     });
     DrodownMenu = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let dropdownStyle;
@@ -6039,7 +6039,7 @@ ${data2.items ? `${validate_component(SelfDropdownMenu, "SelfDropdownMenu").$$re
     });
     DropdownNav = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let toggle = false;
-      let data2 = [
+      let data = [
         { text: "In\xEDcio", href: "/" },
         { text: "Sobre", href: "/sobre" },
         {
@@ -6064,7 +6064,7 @@ ${data2.items ? `${validate_component(SelfDropdownMenu, "SelfDropdownMenu").$$re
       ];
       return `<div class="${"flex-none right-0 text-right top-4 sticky -mb-20 z-50"}"><button class="${"btn btn-square rounded-none btn-ghost bg-secondary hover:bg-secondary hover:text-primary "}"><svg xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" class="${"inline-block w-6 h-6 stroke-current"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M4 6h16M4 12h16M4 18h16"}"></path></svg></button>
 
-    ${validate_component(DrodownMenu, "DrodownMenu").$$render($$result, { toggle, items: data2 }, {}, {})}
+    ${validate_component(DrodownMenu, "DrodownMenu").$$render($$result, { toggle, items: data }, {}, {})}
   </div>`;
     });
     css = {
@@ -6090,17 +6090,17 @@ ${data2.items ? `${validate_component(SelfDropdownMenu, "SelfDropdownMenu").$$re
   }
 });
 
-// .svelte-kit/output/server/chunks/__layout-4732eaa6.js
-var layout_4732eaa6_exports = {};
-__export(layout_4732eaa6_exports, {
+// .svelte-kit/output/server/chunks/__layout-03db4ca2.js
+var layout_03db4ca2_exports = {};
+__export(layout_03db4ca2_exports, {
   default: () => _layout
 });
 var _layout;
-var init_layout_4732eaa6 = __esm({
-  ".svelte-kit/output/server/chunks/__layout-4732eaa6.js"() {
+var init_layout_03db4ca2 = __esm({
+  ".svelte-kit/output/server/chunks/__layout-03db4ca2.js"() {
     init_shims();
-    init_app_34b05bfb();
-    init_footer_4985c2df();
+    init_app_98cc91c3();
+    init_footer_d3b57ea0();
     init_ssr();
     _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       return `${validate_component(DropdownNav, "DropdownNav").$$render($$result, {}, {}, {
@@ -6129,9 +6129,9 @@ ${slots.default ? slots.default({}) : ``}`;
   }
 });
 
-// .svelte-kit/output/server/chunks/error-d3928f79.js
-var error_d3928f79_exports = {};
-__export(error_d3928f79_exports, {
+// .svelte-kit/output/server/chunks/error-f7fe883f.js
+var error_f7fe883f_exports = {};
+__export(error_f7fe883f_exports, {
   default: () => Error2,
   load: () => load
 });
@@ -6139,10 +6139,10 @@ function load({ error: error2, status }) {
   return { props: { error: error2, status } };
 }
 var Error2;
-var init_error_d3928f79 = __esm({
-  ".svelte-kit/output/server/chunks/error-d3928f79.js"() {
+var init_error_f7fe883f = __esm({
+  ".svelte-kit/output/server/chunks/error-f7fe883f.js"() {
     init_shims();
-    init_app_34b05bfb();
+    init_app_98cc91c3();
     init_ssr();
     Error2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { status } = $$props;
@@ -6163,14 +6163,14 @@ ${error2.stack ? `<pre>${escape2(error2.stack)}</pre>` : ``}`;
   }
 });
 
-// .svelte-kit/output/server/chunks/propriedade_card-9aa13cb0.js
+// .svelte-kit/output/server/chunks/propriedade_card-2962e62d.js
 var Propriedade_card;
-var init_propriedade_card_9aa13cb0 = __esm({
-  ".svelte-kit/output/server/chunks/propriedade_card-9aa13cb0.js"() {
+var init_propriedade_card_2962e62d = __esm({
+  ".svelte-kit/output/server/chunks/propriedade_card-2962e62d.js"() {
     init_shims();
-    init_app_34b05bfb();
+    init_app_98cc91c3();
     Propriedade_card = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let { data: data2 = {
+      let { data = {
         fotos: ["https://picsum.photos/id/1005/400/250"],
         title: "Titulo",
         desc: "Descri\xE7\xE3o breve",
@@ -6182,8 +6182,8 @@ var init_propriedade_card_9aa13cb0 = __esm({
       let { side = false } = $$props;
       let { styles = "" } = $$props;
       let { classes = "" } = $$props;
-      if ($$props.data === void 0 && $$bindings.data && data2 !== void 0)
-        $$bindings.data(data2);
+      if ($$props.data === void 0 && $$bindings.data && data !== void 0)
+        $$bindings.data(data);
       if ($$props.agendamento_botao === void 0 && $$bindings.agendamento_botao && agendamento_botao !== void 0)
         $$bindings.agendamento_botao(agendamento_botao);
       if ($$props.tags === void 0 && $$bindings.tags && tags !== void 0)
@@ -6196,29 +6196,29 @@ var init_propriedade_card_9aa13cb0 = __esm({
         $$bindings.styles(styles);
       if ($$props.classes === void 0 && $$bindings.classes && classes !== void 0)
         $$bindings.classes(classes);
-      return `<div${add_attribute("class", `${classes} card glass  rounded-none ${side ? "lg:card-side" : ""} ${glass ? "" : "shadow-none bg-white"} `, 0)}${add_attribute("style", `${styles}; max-width: 65vw`, 0)}><figure><img${add_attribute("src", data2.fotos[0], 0)}${add_attribute("alt", data2.fotos[0], 0)}></figure> 
+      return `<div${add_attribute("class", `${classes} card glass  rounded-none ${side ? "lg:card-side" : ""} ${glass ? "" : "shadow-none bg-white"} `, 0)}${add_attribute("style", `${styles}; max-width: 65vw`, 0)}><figure><img${add_attribute("src", data.fotos[0], 0)}${add_attribute("alt", data.fotos[0], 0)}></figure> 
     <div class="${"card-body"}"><h2 class="${"card-title"}">Titulo</h2> 
         <p>Descri\xE7\xE3o breve</p> 
         <br>
         <div class="${"card-actions"}">${agendamento_botao ? `<label for="${"agendamento"}" class="${"btn rounded-none bg-secondary border-none modal-button"}">Agende agora uma visita</label>` : ``}
           <button class="${"btn btn-ghost rounded-none border-primary text-gray-700 hover:border-primary"}">Mais informa\xE7\xE3o</button></div>
-        ${tags ? `<div class="${"breadcrumbs "}"><ul>${each(data2.tags, (tag) => `<li><small class="${"text-xs font-mono"}">${escape2(data2.tags[0])}</small> 
+        ${tags ? `<div class="${"breadcrumbs "}"><ul>${each(data.tags, (tag) => `<li><small class="${"text-xs font-mono"}">${escape2(data.tags[0])}</small> 
                         </li>`)}</ul></div>` : ``}</div></div>`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/index-08c3d482.js
-var index_08c3d482_exports = {};
-__export(index_08c3d482_exports, {
+// .svelte-kit/output/server/chunks/index-4a5b9a1e.js
+var index_4a5b9a1e_exports = {};
+__export(index_4a5b9a1e_exports, {
   default: () => Routes
 });
 var css2, Routes;
-var init_index_08c3d482 = __esm({
-  ".svelte-kit/output/server/chunks/index-08c3d482.js"() {
+var init_index_4a5b9a1e = __esm({
+  ".svelte-kit/output/server/chunks/index-4a5b9a1e.js"() {
     init_shims();
-    init_app_34b05bfb();
-    init_propriedade_card_9aa13cb0();
+    init_app_98cc91c3();
+    init_propriedade_card_2962e62d();
     init_ssr();
     css2 = {
       code: ".out-wrapper.svelte-1ow23ls.svelte-1ow23ls{background:#f5f5f5;box-shadow:inset 0px -4px 1px rgba(0, 0, 0, 0.25)}#campanhas.svelte-1ow23ls.svelte-1ow23ls{margin-top:10vh;box-sizing:border-box;min-height:28rem}.linhas_geometricas.svelte-1ow23ls.svelte-1ow23ls{display:inline}#l2.svelte-1ow23ls.svelte-1ow23ls{left:40px;position:absolute}#l3.svelte-1ow23ls.svelte-1ow23ls{margin-top:-311px;right:0px;position:absolute}",
@@ -6317,16 +6317,16 @@ var init_index_08c3d482 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/empreendimento-020227c7.js
-var empreendimento_020227c7_exports = {};
-__export(empreendimento_020227c7_exports, {
+// .svelte-kit/output/server/chunks/empreendimento-8beb6efa.js
+var empreendimento_8beb6efa_exports = {};
+__export(empreendimento_8beb6efa_exports, {
   default: () => Empreendimento
 });
 var css3, Empreendimento;
-var init_empreendimento_020227c7 = __esm({
-  ".svelte-kit/output/server/chunks/empreendimento-020227c7.js"() {
+var init_empreendimento_8beb6efa = __esm({
+  ".svelte-kit/output/server/chunks/empreendimento-8beb6efa.js"() {
     init_shims();
-    init_app_34b05bfb();
+    init_app_98cc91c3();
     init_ssr();
     css3 = {
       code: "#l2.svelte-k1ggj8.svelte-k1ggj8{left:40px;position:absolute}li.svelte-k1ggj8>.avatar.svelte-k1ggj8{float:left;margin-right:15px}li.svelte-k1ggj8.svelte-k1ggj8{min-height:100px}li.svelte-k1ggj8 span.svelte-k1ggj8{line-height:40px}",
@@ -6399,16 +6399,16 @@ var init_empreendimento_020227c7 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/old__layout-8928efc2.js
-var old_layout_8928efc2_exports = {};
-__export(old_layout_8928efc2_exports, {
+// .svelte-kit/output/server/chunks/old__layout-d219d1eb.js
+var old_layout_d219d1eb_exports = {};
+__export(old_layout_d219d1eb_exports, {
   default: () => Old__layout
 });
 var css4, Old__layout;
-var init_old_layout_8928efc2 = __esm({
-  ".svelte-kit/output/server/chunks/old__layout-8928efc2.js"() {
+var init_old_layout_d219d1eb = __esm({
+  ".svelte-kit/output/server/chunks/old__layout-d219d1eb.js"() {
     init_shims();
-    init_app_34b05bfb();
+    init_app_98cc91c3();
     init_ssr();
     css4 = {
       code: `@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Noto+Sans:ital@0;1&family=Ruluko&display=swap');@tailwind base;@tailwind components;@tailwind utilities;section{@apply my-28;}body{font-family:"Noto Sans";background-color:#f1f1f1}`,
@@ -6421,26 +6421,26 @@ var init_old_layout_8928efc2 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/old_index-7827dce6.js
-var old_index_7827dce6_exports = {};
-__export(old_index_7827dce6_exports, {
+// .svelte-kit/output/server/chunks/old_index-8744fe9b.js
+var old_index_8744fe9b_exports = {};
+__export(old_index_8744fe9b_exports, {
   default: () => Old_index,
   load: () => load2
 });
 async function load2({ fetch: fetch2 }) {
-  const data2 = await fetch2(`propriedades.json`).then((r) => r.json());
-  return { props: { data: data2 } };
+  const data = await fetch2(`propriedades.json`).then((r) => r.json());
+  return { props: { data } };
 }
 var Old_index;
-var init_old_index_7827dce6 = __esm({
-  ".svelte-kit/output/server/chunks/old_index-7827dce6.js"() {
+var init_old_index_8744fe9b = __esm({
+  ".svelte-kit/output/server/chunks/old_index-8744fe9b.js"() {
     init_shims();
-    init_app_34b05bfb();
+    init_app_98cc91c3();
     init_ssr();
     Old_index = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let { data: data2 } = $$props;
-      if ($$props.data === void 0 && $$bindings.data && data2 !== void 0)
-        $$bindings.data(data2);
+      let { data } = $$props;
+      if ($$props.data === void 0 && $$bindings.data && data !== void 0)
+        $$bindings.data(data);
       return `
 
 <section class="${"px-6"}"><h2 class="${"text-3xl mx-auto text-center font-header"}">Aqui algumas de nossas propriedades dispon\xEDveis
@@ -6454,17 +6454,17 @@ var init_old_index_7827dce6 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/items-9f2149d6.js
-var items_9f2149d6_exports = {};
-__export(items_9f2149d6_exports, {
+// .svelte-kit/output/server/chunks/items-b2c29f8f.js
+var items_b2c29f8f_exports = {};
+__export(items_b2c29f8f_exports, {
   default: () => Items
 });
 var commonjsGlobal2, siema_min, css$1, Carousel, css5, Items;
-var init_items_9f2149d6 = __esm({
-  ".svelte-kit/output/server/chunks/items-9f2149d6.js"() {
+var init_items_b2c29f8f = __esm({
+  ".svelte-kit/output/server/chunks/items-b2c29f8f.js"() {
     init_shims();
-    init_app_34b05bfb();
-    init_propriedade_card_9aa13cb0();
+    init_app_98cc91c3();
+    init_propriedade_card_2962e62d();
     init_ssr();
     commonjsGlobal2 = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
     siema_min = { exports: {} };
@@ -6824,17 +6824,17 @@ var init_items_9f2149d6 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/__layout.reset-eec5d59c.js
-var layout_reset_eec5d59c_exports = {};
-__export(layout_reset_eec5d59c_exports, {
+// .svelte-kit/output/server/chunks/__layout.reset-da09480e.js
+var layout_reset_da09480e_exports = {};
+__export(layout_reset_da09480e_exports, {
   default: () => _layout_reset
 });
 var css6, _layout_reset;
-var init_layout_reset_eec5d59c = __esm({
-  ".svelte-kit/output/server/chunks/__layout.reset-eec5d59c.js"() {
+var init_layout_reset_da09480e = __esm({
+  ".svelte-kit/output/server/chunks/__layout.reset-da09480e.js"() {
     init_shims();
-    init_app_34b05bfb();
-    init_footer_4985c2df();
+    init_app_98cc91c3();
+    init_footer_d3b57ea0();
     init_ssr();
     css6 = {
       code: "@tailwind base;@tailwind components;@tailwind utilities;body, html{background-color:white !important}",
@@ -6851,16 +6851,16 @@ ${validate_component(Footer, "Footer").$$render($$result, {}, {}, {})}`;
   }
 });
 
-// .svelte-kit/output/server/chunks/index-b37b0660.js
-var index_b37b0660_exports = {};
-__export(index_b37b0660_exports, {
+// .svelte-kit/output/server/chunks/index-f6a40f64.js
+var index_f6a40f64_exports = {};
+__export(index_f6a40f64_exports, {
   default: () => Sobre
 });
 var css7, Sobre;
-var init_index_b37b0660 = __esm({
-  ".svelte-kit/output/server/chunks/index-b37b0660.js"() {
+var init_index_f6a40f64 = __esm({
+  ".svelte-kit/output/server/chunks/index-f6a40f64.js"() {
     init_shims();
-    init_app_34b05bfb();
+    init_app_98cc91c3();
     init_ssr();
     css7 = {
       code: ".navbar.svelte-1q54tj3{background-image:url(https://images.unsplash.com/photo-1555636222-cae831e670b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=877&q=80);background-size:cover;background-position:center}#pp.svelte-1q54tj3{background:url(/pp.jpeg);background-position:center;background-size:cover;border:1px solid #FFFFFF;box-sizing:border-box;filter:drop-shadow(7px 30px 10px rgba(0, 0, 0, 0.21))}#backeffect.svelte-1q54tj3{position:absolute;top:74px;height:62vh;left:-136px}",
@@ -6901,12 +6901,12 @@ var init_index_b37b0660 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/flipper-60078903.js
+// .svelte-kit/output/server/chunks/flipper-5024921f.js
 var css$12, MapView, css8, minimizedCss, Flipper;
-var init_flipper_60078903 = __esm({
-  ".svelte-kit/output/server/chunks/flipper-60078903.js"() {
+var init_flipper_5024921f = __esm({
+  ".svelte-kit/output/server/chunks/flipper-5024921f.js"() {
     init_shims();
-    init_app_34b05bfb();
+    init_app_98cc91c3();
     css$12 = {
       code: "@import 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css';",
       map: null
@@ -6943,16 +6943,16 @@ var init_flipper_60078903 = __esm({
       let MapViewCss;
       let GaleryCss;
       let GaleryClass;
-      let { data: data2 } = $$props;
+      let { data } = $$props;
       let { styleinject } = $$props;
       let { full = false } = $$props;
       let { descVisible = false } = $$props;
-      let { photos, title, loc } = data2;
+      let { photos, title, loc } = data;
       let { hsize = "99" } = $$props;
       let viewMap = true;
       let basicBlockCss = `display: flex; position: absolute; bottom: 0px; right: 0px; height:${hsize}vh; transition: 250ms; width:100%; transform-origin: right bottom;`;
-      if ($$props.data === void 0 && $$bindings.data && data2 !== void 0)
-        $$bindings.data(data2);
+      if ($$props.data === void 0 && $$bindings.data && data !== void 0)
+        $$bindings.data(data);
       if ($$props.styleinject === void 0 && $$bindings.styleinject && styleinject !== void 0)
         $$bindings.styleinject(styleinject);
       if ($$props.full === void 0 && $$bindings.full && full !== void 0)
@@ -6970,7 +6970,7 @@ var init_flipper_60078903 = __esm({
           ${viewMap ? "" : ""} `;
       return `<div${add_attribute("style", `height: ${hsize}vh;`, 0)} class="${"flex flex-wrap relative hover:cursor-pointer"}"><div class="${"absolute w-full sm:w-96 top-0 md:top-auto md:bottom-10 text-center align-middle py-5 pl-0 mx-auto sm:pl-20 z-30 text-xl font-hero"}"${add_attribute("style", `background-color: #001B2EF0;
                  color: #FFE9B3;`, 0)}>${escape2(title)}
-      ${descVisible ? `<p>${escape2(data2.desc)}</p>` : ``}</div>
+      ${descVisible ? `<p>${escape2(data.desc)}</p>` : ``}</div>
               
     
     ${validate_component(MapView, "MapView").$$render($$result, {
@@ -6997,55 +6997,32 @@ var init_flipper_60078903 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/index-8da03f63.js
-var index_8da03f63_exports = {};
-__export(index_8da03f63_exports, {
-  default: () => V2
-});
-var V2;
-var init_index_8da03f63 = __esm({
-  ".svelte-kit/output/server/chunks/index-8da03f63.js"() {
-    init_shims();
-    init_app_34b05bfb();
-    init_flipper_60078903();
-    init_ssr();
-    V2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      return `${validate_component(Flipper, "PropertyFlipper").$$render($$result, {
-        data,
-        hsize: "98",
-        full: true,
-        descVisible: true
-      }, {}, {})}`;
-    });
-  }
-});
-
-// .svelte-kit/output/server/chunks/empreendimento-89a46930.js
-var empreendimento_89a46930_exports = {};
-__export(empreendimento_89a46930_exports, {
+// .svelte-kit/output/server/chunks/empreendimento-b695e510.js
+var empreendimento_b695e510_exports = {};
+__export(empreendimento_b695e510_exports, {
   default: () => Empreendimento2
 });
 var css9, PropertyContent, Empreendimento2;
-var init_empreendimento_89a46930 = __esm({
-  ".svelte-kit/output/server/chunks/empreendimento-89a46930.js"() {
+var init_empreendimento_b695e510 = __esm({
+  ".svelte-kit/output/server/chunks/empreendimento-b695e510.js"() {
     init_shims();
-    init_app_34b05bfb();
-    init_flipper_60078903();
+    init_app_98cc91c3();
+    init_flipper_5024921f();
     init_ssr();
     css9 = {
       code: "#imagens.svelte-165jgsa.svelte-165jgsa{width:250px}#imagens.svelte-165jgsa img.svelte-165jgsa{height:200px}@media(max-width: 500px){#imagens.svelte-165jgsa.svelte-165jgsa{display:none}}@media(max-width: 830px){#title-image.svelte-165jgsa.svelte-165jgsa{display:none}}",
       map: null
     };
     PropertyContent = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let { data: data2 } = $$props;
-      if ($$props.data === void 0 && $$bindings.data && data2 !== void 0)
-        $$bindings.data(data2);
+      let { data } = $$props;
+      if ($$props.data === void 0 && $$bindings.data && data !== void 0)
+        $$bindings.data(data);
       $$result.css.add(css9);
-      return `<div id="${"content"}" class="${"w-full space-x-0 p-0 sm:p-5 sm:space-x-3 flex"}"><div class="${"container"}"><img id="${"title-image"}"${add_attribute("src", data2.photos[0], 0)} class="${"object-cover w-full h-96 svelte-165jgsa"}">
-	  <div class="${"space-y-24"}"><h1 id="${"title-banner"}" class="${"text-3xl py-5 w-full pl-5 bg-dark-title-bg text-gray-100 font-header"}">${escape2(data2.title)} 
-	      <i class="${"text-xl ml-5"}">${escape2(data2.tags.map((d) => d.value).join(", "))}</i></h1>
-	    <div id="${"desc"}" class="${"mb-5 text-body p-2 px-6"}">${escape2(data2.desc)}</div>
-	    <div class="${"w-full stats rounded-none justify-center space-x-0 sm:space-x-2 flex flex-wrap"}">${each(data2.tags, (tag) => `<div class="${"image-full w-80 bg-gray-800 mb-5 relative overflow-hidden"}" style="${"width:330px; height:170px"}"><img${add_attribute("src", tag.img, 0)} class="${"opacity-25 object-cover absolute"}">
+      return `<div id="${"content"}" class="${"w-full space-x-0 p-0 sm:p-5 sm:space-x-3 flex"}"><div class="${"container"}"><img id="${"title-image"}"${add_attribute("src", data.photos[0], 0)} class="${"object-cover w-full h-96 svelte-165jgsa"}">
+	  <div class="${"space-y-24"}"><h1 id="${"title-banner"}" class="${"text-3xl py-5 w-full pl-5 bg-dark-title-bg text-gray-100 font-header"}">${escape2(data.title)} 
+	      <i class="${"text-xl ml-5"}">${escape2(data.tags.map((d) => d.value).join(", "))}</i></h1>
+	    <div id="${"desc"}" class="${"mb-5 text-body p-2 px-6"}">${escape2(data.desc)}</div>
+	    <div class="${"w-full stats rounded-none justify-center space-x-0 sm:space-x-2 flex flex-wrap"}">${each(data.tags, (tag) => `<div class="${"image-full w-80 bg-gray-800 mb-5 relative overflow-hidden"}" style="${"width:330px; height:170px"}"><img${add_attribute("src", tag.img, 0)} class="${"opacity-25 object-cover absolute"}">
 	            <div class="${"justify-end card-body"}"><div class="${"stat bg-transparent text-white place-items-center place-content-center"}"><div class="${"stat-title"}">${escape2(tag.title)}</div> 
 	                <div class="${"stat-value"}">${escape2(tag.value)}</div> 
 	                <div class="${"stat-desc"}">${escape2(tag.desc)}</div>
@@ -7054,12 +7031,12 @@ var init_empreendimento_89a46930 = __esm({
 
 	    <div><i class="${"text-sm pl-3 sm:pl-2"}">Localiza\xE7\xE3o
 	      </i>
-	      ${validate_component(MapView, "MapView").$$render($$result, { loc: data2.loc, id: "mapa_desc" }, {}, {})}</div></div></div>
-	<div id="${"imagens"}" class="${"flex flex-col svelte-165jgsa"}">${each(data2.photos, (photo) => `<img${add_attribute("src", photo, 0)} class="${"object-cover w-full svelte-165jgsa"}">`)}</div>
+	      ${validate_component(MapView, "MapView").$$render($$result, { loc: data.loc, id: "mapa_desc" }, {}, {})}</div></div></div>
+	<div id="${"imagens"}" class="${"flex flex-col svelte-165jgsa"}">${each(data.photos, (photo) => `<img${add_attribute("src", photo, 0)} class="${"object-cover w-full svelte-165jgsa"}">`)}</div>
 </div>`;
     });
     Empreendimento2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let data2 = {
+      let data = {
         "title": "T\xEDtulo Placeholder",
         "desc": "LoremIpsum",
         "photos": [
@@ -7089,13 +7066,66 @@ var init_empreendimento_89a46930 = __esm({
         ],
         "loc": '{"coordinates": [-40.8420757,-14.8562588]}'
       };
-      return `${validate_component(Flipper, "PropertyFlipper").$$render($$result, { data: data2 }, {}, {})}
-${validate_component(PropertyContent, "PropertyContent").$$render($$result, { data: data2 }, {}, {})}`;
+      return `${validate_component(Flipper, "PropertyFlipper").$$render($$result, { data }, {}, {})}
+${validate_component(PropertyContent, "PropertyContent").$$render($$result, { data }, {}, {})}`;
     });
   }
 });
 
-// .svelte-kit/output/server/chunks/app-34b05bfb.js
+// .svelte-kit/output/server/chunks/home-f0ae438c.js
+var home_f0ae438c_exports = {};
+__export(home_f0ae438c_exports, {
+  default: () => Home
+});
+var Home;
+var init_home_f0ae438c = __esm({
+  ".svelte-kit/output/server/chunks/home-f0ae438c.js"() {
+    init_shims();
+    init_app_98cc91c3();
+    init_flipper_5024921f();
+    init_ssr();
+    Home = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let data = {
+        "title": "T\xEDtulo Placeholder",
+        "desc": "LoremIpsum",
+        "photos": [
+          "https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          "https://images.unsplash.com/photo-1560184897-ae75f418493e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+        ],
+        "tags": [
+          {
+            img: "",
+            value: "Em destaque",
+            title: "Propriedade",
+            desc: "Nova"
+          },
+          {
+            img: "https://picsum.photos/id/1005/400/250",
+            value: "Em destaque",
+            title: "Propriedade",
+            desc: "Nova"
+          },
+          {
+            img: "https://picsum.photos/id/1005/400/250",
+            value: "Em destaque",
+            title: "Propriedade",
+            desc: "Nova"
+          }
+        ],
+        "loc": '{"coordinates": [-40.8420757,-14.8562588]}'
+      };
+      return `${validate_component(Flipper, "PropertyFlipper").$$render($$result, {
+        data,
+        hsize: "98",
+        full: true,
+        descVisible: true
+      }, {}, {})}`;
+    });
+  }
+});
+
+// .svelte-kit/output/server/chunks/app-98cc91c3.js
 function run(fn) {
   return fn();
 }
@@ -7209,9 +7239,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/_app/start-f20c0b9c.js",
+      file: assets + "/_app/start-9d6dbec2.js",
       css: [assets + "/_app/assets/start-d977ffc4.css", assets + "/_app/assets/vendor-eb4b9fa4.css"],
-      js: [assets + "/_app/start-f20c0b9c.js", assets + "/_app/chunks/vendor-7dc32140.js", assets + "/_app/chunks/preload-helper-ec9aa979.js"]
+      js: [assets + "/_app/start-9d6dbec2.js", assets + "/_app/chunks/vendor-7dc32140.js", assets + "/_app/chunks/preload-helper-ec9aa979.js"]
     },
     fetched: void 0,
     floc: false,
@@ -7255,8 +7285,8 @@ function render(request, {
   return respond({ ...request, host }, options, { prerender });
 }
 var current_component, escaped2, missing_component, on_destroy, css10, Root, base, assets, user_hooks, template, options, default_settings, empty, manifest, get_hooks, module_lookup, metadata_lookup;
-var init_app_34b05bfb = __esm({
-  ".svelte-kit/output/server/chunks/app-34b05bfb.js"() {
+var init_app_98cc91c3 = __esm({
+  ".svelte-kit/output/server/chunks/app-98cc91c3.js"() {
     init_shims();
     init_ssr();
     Promise.resolve();
@@ -7369,16 +7399,16 @@ ${``}`;
         },
         {
           type: "page",
-          pattern: /^\/v2\/?$/,
+          pattern: /^\/v2\/empreendimento\/?$/,
           params: empty,
-          a: ["src/routes/__layout.svelte", "src/routes/v2/index.svelte"],
+          a: ["src/routes/__layout.svelte", "src/routes/v2/empreendimento.svelte"],
           b: [".svelte-kit/build/components/error.svelte"]
         },
         {
           type: "page",
-          pattern: /^\/v2\/empreendimento\/?$/,
+          pattern: /^\/v2\/home\/?$/,
           params: empty,
-          a: ["src/routes/__layout.svelte", "src/routes/v2/empreendimento.svelte"],
+          a: ["src/routes/__layout.svelte", "src/routes/v2/home.svelte"],
           b: [".svelte-kit/build/components/error.svelte"]
         }
       ]
@@ -7390,19 +7420,19 @@ ${``}`;
       externalFetch: hooks.externalFetch || fetch
     });
     module_lookup = {
-      "src/routes/__layout.svelte": () => Promise.resolve().then(() => (init_layout_4732eaa6(), layout_4732eaa6_exports)),
-      ".svelte-kit/build/components/error.svelte": () => Promise.resolve().then(() => (init_error_d3928f79(), error_d3928f79_exports)),
-      "src/routes/index.svelte": () => Promise.resolve().then(() => (init_index_08c3d482(), index_08c3d482_exports)),
-      "src/routes/empreendimento.svelte": () => Promise.resolve().then(() => (init_empreendimento_020227c7(), empreendimento_020227c7_exports)),
-      "src/routes/old__layout.svelte": () => Promise.resolve().then(() => (init_old_layout_8928efc2(), old_layout_8928efc2_exports)),
-      "src/routes/old_index.svelte": () => Promise.resolve().then(() => (init_old_index_7827dce6(), old_index_7827dce6_exports)),
-      "src/routes/items.svelte": () => Promise.resolve().then(() => (init_items_9f2149d6(), items_9f2149d6_exports)),
-      "src/routes/sobre/__layout.reset.svelte": () => Promise.resolve().then(() => (init_layout_reset_eec5d59c(), layout_reset_eec5d59c_exports)),
-      "src/routes/sobre/index.svelte": () => Promise.resolve().then(() => (init_index_b37b0660(), index_b37b0660_exports)),
-      "src/routes/v2/index.svelte": () => Promise.resolve().then(() => (init_index_8da03f63(), index_8da03f63_exports)),
-      "src/routes/v2/empreendimento.svelte": () => Promise.resolve().then(() => (init_empreendimento_89a46930(), empreendimento_89a46930_exports))
+      "src/routes/__layout.svelte": () => Promise.resolve().then(() => (init_layout_03db4ca2(), layout_03db4ca2_exports)),
+      ".svelte-kit/build/components/error.svelte": () => Promise.resolve().then(() => (init_error_f7fe883f(), error_f7fe883f_exports)),
+      "src/routes/index.svelte": () => Promise.resolve().then(() => (init_index_4a5b9a1e(), index_4a5b9a1e_exports)),
+      "src/routes/empreendimento.svelte": () => Promise.resolve().then(() => (init_empreendimento_8beb6efa(), empreendimento_8beb6efa_exports)),
+      "src/routes/old__layout.svelte": () => Promise.resolve().then(() => (init_old_layout_d219d1eb(), old_layout_d219d1eb_exports)),
+      "src/routes/old_index.svelte": () => Promise.resolve().then(() => (init_old_index_8744fe9b(), old_index_8744fe9b_exports)),
+      "src/routes/items.svelte": () => Promise.resolve().then(() => (init_items_b2c29f8f(), items_b2c29f8f_exports)),
+      "src/routes/sobre/__layout.reset.svelte": () => Promise.resolve().then(() => (init_layout_reset_da09480e(), layout_reset_da09480e_exports)),
+      "src/routes/sobre/index.svelte": () => Promise.resolve().then(() => (init_index_f6a40f64(), index_f6a40f64_exports)),
+      "src/routes/v2/empreendimento.svelte": () => Promise.resolve().then(() => (init_empreendimento_b695e510(), empreendimento_b695e510_exports)),
+      "src/routes/v2/home.svelte": () => Promise.resolve().then(() => (init_home_f0ae438c(), home_f0ae438c_exports))
     };
-    metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-cf7d902d.js", "css": ["assets/pages/__layout.svelte-cbe3c499.css", "assets/vendor-eb4b9fa4.css", "assets/footer-7a786148.css"], "js": ["pages/__layout.svelte-cf7d902d.js", "chunks/vendor-7dc32140.js", "chunks/footer-c1ff2d45.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-739a7f4d.js", "css": ["assets/vendor-eb4b9fa4.css"], "js": ["error.svelte-739a7f4d.js", "chunks/vendor-7dc32140.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-07233646.js", "css": ["assets/pages/index.svelte-2968b8cc.css", "assets/vendor-eb4b9fa4.css"], "js": ["pages/index.svelte-07233646.js", "chunks/vendor-7dc32140.js", "chunks/propriedade_card-e2d7efb2.js"], "styles": [] }, "src/routes/empreendimento.svelte": { "entry": "pages/empreendimento.svelte-e1bafc11.js", "css": ["assets/pages/empreendimento.svelte-8a9fa168.css", "assets/vendor-eb4b9fa4.css"], "js": ["pages/empreendimento.svelte-e1bafc11.js", "chunks/vendor-7dc32140.js", "chunks/preload-helper-ec9aa979.js"], "styles": [] }, "src/routes/old__layout.svelte": { "entry": "pages/old__layout.svelte-dff6ff63.js", "css": ["assets/pages/old__layout.svelte-b1edb4af.css", "assets/vendor-eb4b9fa4.css"], "js": ["pages/old__layout.svelte-dff6ff63.js", "chunks/vendor-7dc32140.js"], "styles": [] }, "src/routes/old_index.svelte": { "entry": "pages/old_index.svelte-8b31b2c3.js", "css": ["assets/vendor-eb4b9fa4.css"], "js": ["pages/old_index.svelte-8b31b2c3.js", "chunks/vendor-7dc32140.js"], "styles": [] }, "src/routes/items.svelte": { "entry": "pages/items.svelte-71419b84.js", "css": ["assets/pages/items.svelte-5454e0c2.css", "assets/vendor-eb4b9fa4.css"], "js": ["pages/items.svelte-71419b84.js", "chunks/vendor-7dc32140.js", "chunks/propriedade_card-e2d7efb2.js"], "styles": [] }, "src/routes/sobre/__layout.reset.svelte": { "entry": "pages/sobre/__layout.reset.svelte-85abf768.js", "css": ["assets/pages/sobre/__layout.reset.svelte-1c18099a.css", "assets/vendor-eb4b9fa4.css", "assets/footer-7a786148.css"], "js": ["pages/sobre/__layout.reset.svelte-85abf768.js", "chunks/vendor-7dc32140.js", "chunks/footer-c1ff2d45.js"], "styles": [] }, "src/routes/sobre/index.svelte": { "entry": "pages/sobre/index.svelte-d73d7bed.js", "css": ["assets/pages/sobre/index.svelte-1c5c2487.css", "assets/vendor-eb4b9fa4.css"], "js": ["pages/sobre/index.svelte-d73d7bed.js", "chunks/vendor-7dc32140.js"], "styles": [] }, "src/routes/v2/index.svelte": { "entry": "pages/v2/index.svelte-956263cb.js", "css": ["assets/vendor-eb4b9fa4.css", "assets/flipper-b6dd63fc.css"], "js": ["pages/v2/index.svelte-956263cb.js", "chunks/vendor-7dc32140.js", "chunks/flipper-f9ad9d74.js", "chunks/preload-helper-ec9aa979.js"], "styles": [] }, "src/routes/v2/empreendimento.svelte": { "entry": "pages/v2/empreendimento.svelte-21ccceae.js", "css": ["assets/pages/v2/empreendimento.svelte-f17a6f61.css", "assets/vendor-eb4b9fa4.css", "assets/flipper-b6dd63fc.css"], "js": ["pages/v2/empreendimento.svelte-21ccceae.js", "chunks/vendor-7dc32140.js", "chunks/flipper-f9ad9d74.js", "chunks/preload-helper-ec9aa979.js"], "styles": [] } };
+    metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-cf7d902d.js", "css": ["assets/pages/__layout.svelte-cbe3c499.css", "assets/vendor-eb4b9fa4.css", "assets/footer-7a786148.css"], "js": ["pages/__layout.svelte-cf7d902d.js", "chunks/vendor-7dc32140.js", "chunks/footer-c1ff2d45.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-739a7f4d.js", "css": ["assets/vendor-eb4b9fa4.css"], "js": ["error.svelte-739a7f4d.js", "chunks/vendor-7dc32140.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-07233646.js", "css": ["assets/pages/index.svelte-2968b8cc.css", "assets/vendor-eb4b9fa4.css"], "js": ["pages/index.svelte-07233646.js", "chunks/vendor-7dc32140.js", "chunks/propriedade_card-e2d7efb2.js"], "styles": [] }, "src/routes/empreendimento.svelte": { "entry": "pages/empreendimento.svelte-e1bafc11.js", "css": ["assets/pages/empreendimento.svelte-8a9fa168.css", "assets/vendor-eb4b9fa4.css"], "js": ["pages/empreendimento.svelte-e1bafc11.js", "chunks/vendor-7dc32140.js", "chunks/preload-helper-ec9aa979.js"], "styles": [] }, "src/routes/old__layout.svelte": { "entry": "pages/old__layout.svelte-dff6ff63.js", "css": ["assets/pages/old__layout.svelte-b1edb4af.css", "assets/vendor-eb4b9fa4.css"], "js": ["pages/old__layout.svelte-dff6ff63.js", "chunks/vendor-7dc32140.js"], "styles": [] }, "src/routes/old_index.svelte": { "entry": "pages/old_index.svelte-8b31b2c3.js", "css": ["assets/vendor-eb4b9fa4.css"], "js": ["pages/old_index.svelte-8b31b2c3.js", "chunks/vendor-7dc32140.js"], "styles": [] }, "src/routes/items.svelte": { "entry": "pages/items.svelte-71419b84.js", "css": ["assets/pages/items.svelte-5454e0c2.css", "assets/vendor-eb4b9fa4.css"], "js": ["pages/items.svelte-71419b84.js", "chunks/vendor-7dc32140.js", "chunks/propriedade_card-e2d7efb2.js"], "styles": [] }, "src/routes/sobre/__layout.reset.svelte": { "entry": "pages/sobre/__layout.reset.svelte-85abf768.js", "css": ["assets/pages/sobre/__layout.reset.svelte-1c18099a.css", "assets/vendor-eb4b9fa4.css", "assets/footer-7a786148.css"], "js": ["pages/sobre/__layout.reset.svelte-85abf768.js", "chunks/vendor-7dc32140.js", "chunks/footer-c1ff2d45.js"], "styles": [] }, "src/routes/sobre/index.svelte": { "entry": "pages/sobre/index.svelte-d73d7bed.js", "css": ["assets/pages/sobre/index.svelte-1c5c2487.css", "assets/vendor-eb4b9fa4.css"], "js": ["pages/sobre/index.svelte-d73d7bed.js", "chunks/vendor-7dc32140.js"], "styles": [] }, "src/routes/v2/empreendimento.svelte": { "entry": "pages/v2/empreendimento.svelte-21ccceae.js", "css": ["assets/pages/v2/empreendimento.svelte-f17a6f61.css", "assets/vendor-eb4b9fa4.css", "assets/flipper-b6dd63fc.css"], "js": ["pages/v2/empreendimento.svelte-21ccceae.js", "chunks/vendor-7dc32140.js", "chunks/flipper-f9ad9d74.js", "chunks/preload-helper-ec9aa979.js"], "styles": [] }, "src/routes/v2/home.svelte": { "entry": "pages/v2/home.svelte-0750cda7.js", "css": ["assets/vendor-eb4b9fa4.css", "assets/flipper-b6dd63fc.css"], "js": ["pages/v2/home.svelte-0750cda7.js", "chunks/vendor-7dc32140.js", "chunks/flipper-f9ad9d74.js", "chunks/preload-helper-ec9aa979.js"], "styles": [] } };
   }
 });
 
@@ -7415,7 +7445,7 @@ init_shims();
 // .svelte-kit/output/server/app.js
 init_shims();
 init_ssr();
-init_app_34b05bfb();
+init_app_98cc91c3();
 
 // .svelte-kit/netlify/entry.js
 init();
