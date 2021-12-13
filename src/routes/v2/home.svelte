@@ -1,6 +1,5 @@
 <script type="text/javascript">
   import PropertyFlipper from '$lib/flipper.svelte'
-  import PropertyFlipper from "./lib/flipper.svelte" 
   let data = {
     "title": "Título Placeholder",
     "desc": "LoremIpsum",
