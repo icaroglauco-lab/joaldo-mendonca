@@ -12,7 +12,7 @@ collections:
       - label: "Ficha"
         name: "ficha"
         widget: "list"
-        allow_add: false
+        allow_add: true
         required: true
         fields: [{label: Telefone, name: telefone, required: true, widget: "string"},
                   {label: "CRECI-BA", name: creciba, required: true, widget: "string"}]
