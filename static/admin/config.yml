@@ -14,7 +14,7 @@ collections:
         widget: "list"
         allow_add: false
         required: true
-        default: [{label: Telefone, name: telefone, required: true, widget: "string"},
+        fields: [{label: Telefone, name: telefone, required: true, widget: "string"},
                   {label: "CRECI-BA", name: creciba, required: true, widget: "string"}]
       - {label: "Foto", name: "photo", widget: "image", required: true}
   - name: propriedades
