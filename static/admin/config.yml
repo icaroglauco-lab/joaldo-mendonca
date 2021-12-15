@@ -2,40 +2,21 @@ backend:
   name: git-gateway
   branch: main
 collections:
-  - name: Empreendimentos
-    label: empreendimentos
-    folder: static/empreendimentos
+  - name: sobre
+    label: "Conteúdo página \"Sobre\""
+    folder: static/sobre
     create: true
-    identifier_field: titulo
     extension: json
-    slug: "empreendimento_{{slug}}"
     fields:
-      # Detalhes informativos
-      - label: "Título"
-        name: "titulo"
-        widget: "string"
-      - label: "Descrição"
-        name: "desc"
-        widget: "markdown"
-      - label: "Localização (em mapa)"
-        name: "loc"
-        widget: "map"
-        default: "{ \"type\": \"Point\",\"coordinates\": [-40.8427477,-14.8519483]}"
-      # Galeria de imagens
-      - label: "Foto demonstrativa"
-        name: "foto"
-        widget: "image"
-        choose_url: true
-      - label: "Palavras-chave (ex: \"Lotemaneto Rural\")"
-        name: "tags"
+      - {label: "História", name: "desc", widget: "markdown", required: true}
+      - label: "Ficha"
+        name: "ficha"
         widget: "list"
-        allow_add: true
-        add_to_top: true
-        fields: 
-          - label: "tag"
-            name: "tag"
-            widget: "string"
-
+        allow_add: false
+        required: true
+        default: [{label: Telefone, name: telefone, required: true, widget: "string"},
+                  {label: "CRECI-BA", name: creciba, required: true, widget: "string"}]
+      - {label: "Foto", name: "photo", widget: "image", required: true}
   - name: propriedades
     label: Propriedades
     folder: static/propriedades
@@ -44,7 +25,6 @@ collections:
     extension: json
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     fields:
-      
       # Detalhes informativos
       - label: "Título"
         name: "titulo"
@@ -54,20 +34,16 @@ collections:
         name: "loc"
         widget: "map"
         default: "{ \"type\": \"Point\",\"coordinates\": [-40.8427477,-14.8519483]}"
-      - label: "Features"
-        name: "features"
-        widget: "list"
+      - label: "Salas"
+        name: "salas"
+        widget: "number"
         required: false
-        allow_add: true
-        fields: 
-          - label: "Feature"
-            name: "feature"
-            widget: "string"
-          - label: "Icone"
-            name: "feature_icon"
-            widget: "image"
-            choose_url: true
-
+      - label: "Salas"
+        name: "salas"
+        widget: "number"
+      - label: "Metros quadrados"
+        name: "m2"
+        widget: "float"
       # Galeria de imagens
       - label: "Fotos demonstrativas"
         name: "fotos"
@@ -75,25 +51,24 @@ collections:
         required: false
         allow_add: true
         fields: [{label: "Foto", name: "foto", widget: "image", choose_url: true, default: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=773&q=80", media_library: {config: {multiple: true}}}]
-    
-
-      # Pagamento
-      - label: "Forma de negociação"
-        name: "negocio"
+      # Youtube video
+      - label: "Youtube video"
+        name: "yt"
         widget: "string"
-
-      - label: "Valor (R$)"
-        name: "preço"
-        widget: "number"
-        value_type: "float"
-
-      # Organização 
+      # Se aplicável
+      - {label: "Região", name: "regiao", widget: "string", required: false}
+      - {label: "Água", name: "agua", widget: "boolean", required: false}
+      - {label: "Luz", name: "luz", widget: "boolean", required: false}
+      - {label: "Praça", name: "praca", widget: "boolean", required: false}
+      - {label: "Condomínio", name: "condominio", widget: "boolean", required: false}
+      - {label: "Asfaltamento", name: "asfaltamento", widget: "boolean", required: false}
+        # Organização 
       - label: "Palavras-chave"
         name: "tags"
         widget: "list"
         allow_add: true
         add_to_top: true
-        default: ["Nova propriedade"]
+        default: ["Novo"]
 
 media_folder: "static/uploads"
 public_folder: "/uploads"
