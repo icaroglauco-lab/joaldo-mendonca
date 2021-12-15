@@ -39,7 +39,7 @@ collections:
         widget: "number"
         required: false
       - label: "Salas"
-        name: "salas"
+        name: "metros"
         widget: "number"
       - label: "Metros quadrados"
         name: "m2"
