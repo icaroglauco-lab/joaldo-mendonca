@@ -58,7 +58,8 @@ collections:
         required: false
       - label: "Metros quadrados"
         name: "m2"
-        widget: "float"
+        widget: "number"
+        value_type: "float"
         # Organização 
       - label: "Palavras-chave"
         name: "tags"
