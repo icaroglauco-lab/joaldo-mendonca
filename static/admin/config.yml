@@ -69,7 +69,7 @@ collections:
         add_to_top: true
         fields:
           - {label: "Imagem ou Ícone", name: "img", widget: "image", required: false}
-          - {label: "Valor", name: "value", widget: "string", required: true}
+          - {label: "Texto principal", name: "value", widget: "string", required: true}
           - {label: "Descrição", name: "desc", widget: "string", required: true}
           - {label: "Title", name: "title", widget: "string", required: true}
 
