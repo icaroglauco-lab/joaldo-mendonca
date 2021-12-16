@@ -34,16 +34,6 @@ collections:
         name: "loc"
         widget: "map"
         default: "{ \"type\": \"Point\",\"coordinates\": [-40.8427477,-14.8519483]}"
-      - label: "Salas"
-        name: "salas"
-        widget: "number"
-        required: false
-      - label: "Salas"
-        name: "metros"
-        widget: "number"
-      - label: "Metros quadrados"
-        name: "m2"
-        widget: "float"
       # Galeria de imagens
       - label: "Fotos demonstrativas"
         name: "fotos"
@@ -62,13 +52,24 @@ collections:
       - {label: "Praça", name: "praca", widget: "boolean", required: false}
       - {label: "Condomínio", name: "condominio", widget: "boolean", required: false}
       - {label: "Asfaltamento", name: "asfaltamento", widget: "boolean", required: false}
+      - label: "Salas"
+        name: "salas"
+        widget: "number"
+        required: false
+      - label: "Metros quadrados"
+        name: "m2"
+        widget: "float"
         # Organização 
       - label: "Palavras-chave"
         name: "tags"
         widget: "list"
         allow_add: true
         add_to_top: true
-        default: ["Novo"]
+        fields:
+          - {label: "Imagem ou Ícone", name: "img", widget: "image", required: false}
+          - {label: "Valor", name: "value", widget: "string", required: true}
+          - {label: "Descrição", name: "desc", widget: "string", required: true}
+          - {label: "Title", name: "title", widget: "string", required: true}
 
 media_folder: "static/uploads"
 public_folder: "/uploads"
