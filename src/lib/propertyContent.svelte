@@ -1,9 +1,10 @@
-<script type="text/javascript">
-  import MapView from './MapView.svelte';
+<script>
+  	import MapView from './MapView.svelte';
 	export let data;
 	let descImgIndex = 0;
 	let descTitleOpct = true;
 </script> 
+
 
 <div id="content" class="w-full space-x-5 p-5 flex">
 	<div class="container">
@@ -47,21 +48,22 @@
 	</div>
 </div>
 
-<style lang="sass">
-  #title-banner
-    background-color
+<style>
+  #imagens{
+    width: 250px;
+  }  
+  #imagens img{
+    height: 200px
+  } 
 
-  #content
-
-  #imagens
-    width: 250px
-    img 
-      height: 200px
-
-  @media (max-width: 500px)
-    #imagens
-      display: none
-  @media (max-width: 830px)
-    #title-image
-      display: none
+  @media (max-width: 500px){
+	  #imagens{
+		  display: none
+	  }
+	  @media (max-width: 830px){
+		  #title-image{
+			  display: none
+		  }
+	  }
+  }
 </style>

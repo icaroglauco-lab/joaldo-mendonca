@@ -1,22 +1,26 @@
 <script type="text/javascript">
-  import MapView from './MapView.svelte';
+	import MapView from './MapView.svelte';
   export let data;
   export let styleinject;
   export let full= false;
   export let descVisible= false;
+  export let onFlip;
+  export let hPreenchimento = "0rem";
+  export let zoom = 14
+
   let {photos, title, loc} = data;
 
   export let hsize = "99";
   let minimizedCss = "transform: scale(0.1); z-index:20; border: 50px solid rgba(0, 72, 208, 0.24)"
 
   let viewMap = true;
-  let basicBlockCss = `display: flex; position: absolute; bottom: 0px; right: 0px; height:${hsize}vh; transition: 250ms; width:100%; transform-origin: right bottom;`;
+  let basicBlockCss = `display: flex; position: absolute; bottom: 0px; right: 0px; transition: 250ms; width:100%; transform-origin: right bottom;`;
 
 
   $: MapViewCss = `${basicBlockCss}
           ${viewMap? 
             minimizedCss
-          : "z-index:1"}`
+          : "z-index:1"}; height: 110vh`
 
   $: GaleryCss = `${basicBlockCss}
           ${viewMap? 
@@ -28,12 +32,13 @@
           ${viewMap? 
             ""
           : ""} `
+
+  $: onFlip(viewMap)
 </script>
 
 <div style={`height: ${hsize}vh;`}
     class="flex flex-wrap relative hover:cursor-pointer" 
     >
-
 
     <div class="absolute w-full sm:w-96 top-0 md:top-auto md:bottom-10 text-center align-middle py-5 pl-0 mx-auto sm:pl-20 z-30 text-xl font-hero" 
          style={`background-color: #001B2EF0;
@@ -47,12 +52,12 @@
     </div>
               
     <!-- Mapa view -->
-    <MapView loc={loc} styles={MapViewCss} onclick={() => viewMap = false}/>
+    <MapView loc={loc} styles={MapViewCss} onclick={() => viewMap = false} zoom={zoom}/>
     <!-- galeria de imagens -->
     <div style={GaleryCss} class={GaleryClass} >
         {#each photos as image, i}
           <div id={`img${i+1}`} class="w-full mx-auto carousel-item" >
-              <img class='w-full object-cover' src={image} alt="" on:click={() => viewMap = !viewMap}>
+            <img class='w-full object-cover' src={image} alt="" on:click={() => viewMap = !viewMap}>
           </div>
         {/each}
     </div>
@@ -61,7 +66,7 @@
     <div fade class="absolute bottom-0 flex justify-center w-max py-4 space-x-2 items-end  transition-all z-10"
               style={`
                 left: 50%; transform-origin: center;
-                transform: ${viewMap? "scale(1) translateX(-50%)": "transform: scale(0)"};`}
+                transform: ${viewMap? "scale(1) translateX(-50%)": "scale(0)"};`}
     >
       {#each photos as image, i}
         <a href={`#img${i+1}`} class="btn btn-xs btn-circle">{i+1}</a> 

@@ -29,6 +29,7 @@ collections:
       - label: "Título"
         name: "titulo"
         widget: "string"
+      - {label: "Preço demonstrativo", name: "price", widget: "string", required: true}
       - {label: "Descrição", name: "desc", widget: "markdown", required: true}
       - label: "Localização (em mapa)"
         name: "loc"

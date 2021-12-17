@@ -1,12 +1,8 @@
-// searchbar.svelte
-
 <nav class="w-full h-30 flex flex-row flex-nowrap justify-between shadow px-5 py-2  font-body">
     <div id="fields flex flex-wrap ">
             
       <div class="form-control inline-block mr-2 mb-2">
-        <label class="label">
-          <span class="label-text font-hero">Procurar por Tags (separadas por vírgula)</span>
-        </label> 
+          <span class="label-text font-hero">Procurar por Tags (separadas por vírgula) ou Títulos</span>
         <input type="text" placeholder="Ex: Aluguel, Vitória da Conquista..." class="input w-full input-bordered rounded-none">
       </div>        
 
@@ -30,14 +26,16 @@
 
     </div>
 
-      <div class="btn-ghost btn h-auto self-stretch rounded-none p-10 pb-6 items-end -mr-5 -mt-2 text-secondary">Veja propriedades</div>
+      <div class="btn-ghost btn h-auto self-stretch rounded-none  text-primary">Buscar</div>
   </nav>
 
 <style lang="sass">
   nav 
-    background: rgb(255,255,255)
-    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(148,148,148,1) 100%)
-
+    position: absolute
+    bottom: 0px
+    width: max-content
+    background: rgb(200 200 200 / 0%)
+    color: #222
   .btn
     transform: scaleY(1.15)
 </style>
