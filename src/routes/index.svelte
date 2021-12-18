@@ -10,6 +10,7 @@
         "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
         "https://images.unsplash.com/photo-1560184897-ae75f418493e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
       ],
+      "yt": "https://www.youtube.com/watch?v=efqNT23WAPQ&lc=UgypP2GRlRfEOa2PcJV4AaABAg.9RiYouSgSPi9S39ZzIiy2m",
       "price": "2.000,00",
       "tags": [
         {img:"https://picsum.photos/id/1005/400/250", value: "Em destaque", title: "Propriedade", desc: "Nova"},
@@ -26,6 +27,7 @@
         "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
         "https://images.unsplash.com/photo-1560184897-ae75f418493e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
       ],
+      "yt": "https://www.youtube.com/watch?v=efqNT23WAPQ&lc=UgypP2GRlRfEOa2PcJV4AaABAg.9RiYouSgSPi9S39ZzIiy2m",
       "price": "2.000,00",
       "tags": [
         {img:"https://picsum.photos/id/1005/400/250", value: "Em destaque", title: "Propriedade", desc: "Nova"},
@@ -43,6 +45,7 @@
         "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
         "https://images.unsplash.com/photo-1560184897-ae75f418493e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
       ],
+      "yt": "https://www.youtube.com/watch?v=efqNT23WAPQ&lc=UgypP2GRlRfEOa2PcJV4AaABAg.9RiYouSgSPi9S39ZzIiy2m",
       "price": "2.000,00",
       "tags": [
         {img:"https://picsum.photos/id/1005/400/250", value: "Em destaque", title: "Propriedade", desc: "Nova"},
@@ -60,6 +63,7 @@
         "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
         "https://images.unsplash.com/photo-1560184897-ae75f418493e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
       ],
+      "yt": "https://www.youtube.com/watch?v=efqNT23WAPQ&lc=UgypP2GRlRfEOa2PcJV4AaABAg.9RiYouSgSPi9S39ZzIiy2m",
       "price": "2.000,00",
       "tags": [
         {img:"https://picsum.photos/id/1005/400/250", value: "Reformada", title: "Propriedade", desc: "Nova"},
@@ -83,7 +87,13 @@
   <div class="overflow-hidden carousel w-full transition-all" style="height: 90vh;">
     {#each data as destaque, i}
       <div  id={`destaque${i+1}`} class="w-full mx-auto carousel-item">
-        <img class='w-full object-cover' src={destaque.photos[0]} alt=""/>
+        {#if destaque.yt.length>3}
+          <video class='w-full object-cover' autoplay muted loop poster={destaque.photos[0]}>
+            <source src={destaque.yt} type="video/mp4">
+          </video>
+        {:else}
+          <img src={destaque.photos[0]} alt="" />
+        {/if}
       </div>
     {/each}
   </div>
