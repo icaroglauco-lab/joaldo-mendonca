@@ -18,6 +18,7 @@
   "luz": true,
   "desc": "  **Lorem ipsum dolor sit amet, consectetur adipiscing elit**. Proin convallis sagittis urna at malesuada. Fusce fermentum, sem vel ultrices cursus, velit nulla viverra ligula, sit amet pretium libero dolor sed odio. In eu orci posuere, imperdiet tortor vel, tempus nibh. \n\n  Cras vel ante id orci cursus lacinia. Aenean fermentum dui vitae neque feugiat, vestibulum tempus mauris mattis. Integer sit amet urna vitae lorem facilisis sollicitudin sit amet lacinia odio. Fusce at tortor volutpat, tempor dui non, vestibulum augue. \n\n  Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc leo turpis, placerat sodales felis sed, faucibus condimentum risus. Sed sed risus tempor, porta lorem eu, rutrum ligula. Quisque non pellentesque felis. In hac habitasse *platea dictumst*. Nulla quis ex neque.",
   "agua": true,
+  "cat": "Urbano Venda",
   "tags": [
     {
       "value": "Novo",
