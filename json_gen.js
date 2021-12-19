@@ -20,7 +20,7 @@ geradores.forEach( (item, index) => {
             slug = slug.join('.')
             const f = {
                 slug,
-                data: JSON.parse(fs.readFileSync(`${item["PASTA"]}${fileName}`, {encoding:'utf8', flag:'r'}))};
+                ...JSON.parse(fs.readFileSync(`${item["PASTA"]}${fileName}`, {encoding:'utf8', flag:'r'}))};
             return f;
         });
 

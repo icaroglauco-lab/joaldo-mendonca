@@ -30,6 +30,10 @@ collections:
         name: "titulo"
         widget: "string"
       - {label: "Preço demonstrativo", name: "price", widget: "string", required: true}
+      - label: "Categoria"
+        name: "cat"
+        widget: "select"
+        options: ["Chacreamento rural", "Urbano Venda", "Urbano Aluguel"]
       - {label: "Descrição", name: "desc", widget: "markdown", required: true}
       - label: "Localização (em mapa)"
         name: "loc"

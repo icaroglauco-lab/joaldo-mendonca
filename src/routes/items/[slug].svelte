@@ -1,3 +1,25 @@
+<script context="module">
+  export async function load({ page, fetch }){
+    const url = `/propriedades.json`;
+    const res = await fetch(url);
+
+    
+
+    if(res.ok){
+      return{
+        props: {
+          data: await res.json()
+        }
+      }
+    }
+
+    return {
+      status: res.status,
+      error: new Error('!Erro de carregamento de propriedades/slug.json')
+    }
+  }
+</script>
+
 <script>
     import Items from '$lib/items column.svelte'
   

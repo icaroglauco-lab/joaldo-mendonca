@@ -8,10 +8,10 @@
 
 <div id="content" class="w-full space-x-5 p-5 flex">
 	<div class="container">
-	  <img id="title-image" src={data.photos[descImgIndex]} class="object-cover w-full h-96">
+	  <img id="title-image" src={data.fotos[descImgIndex].foto} class="object-cover w-full h-96">
 	  <div class="space-y-24">
 	    <h1 id="title-banner" class="text-3xl py-5 w-full pl-5 bg-dark-title-bg text-gray-100 font-header transition duration-300 delay-150" style={`opacity: ${descTitleOpct?1:0};`}>
-	      {data.title} 
+	      {data.titulo} 
 	      <i class="text-xl ml-5">
 	        {data.tags.map(d => d.value).join(', ')}
 	      </i>
@@ -42,8 +42,8 @@
 	  
 	</div>
 	<div id="imagens" class="flex flex-col">
-	  {#each data.photos as photo, i}
-	    <img src={photo} on:click={()=> descImgIndex = i} class="object-cover w-full hover:cursor-pointer hover:scale-105"/>
+	  {#each data.fotos as photo, i}
+	    <img src={photo.foto} on:click={()=> descImgIndex = i} class="object-cover w-full hover:cursor-pointer hover:scale-105"/>
 	  {/each}
 	</div>
 </div>

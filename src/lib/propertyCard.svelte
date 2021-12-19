@@ -3,11 +3,13 @@
   export let classes= "";
   export let onClick= ()=> {}
   export let hoverEffect = () => {}
+
+  console.log(data)
 </script>
 
   <div class={`w-96 h-72 relative z-10 m-1 ${classes}`} on:click={onClick} on:focus={hoverEffect} on:mouseover={hoverEffect}>
-      <img src={data.photos[0]}
-      alt={data.title}
+      <img src={data.fotos[0].foto}
+      alt={data.titulo}
       class="object-cover h-full" style="background-color: #eee">
 
       <div class="absolute bottom-0 p-4 pl-10 pr-6" style="background-color: #001B2EF0;">

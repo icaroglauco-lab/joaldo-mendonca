@@ -7,11 +7,14 @@
     let mapIndexControl = 0;
   
     let locs = data.map(d => {
+        let _loc = JSON.parse(d.loc);
+        _loc.coordinates = _loc.coordinates.reverse();
         return {
-            ...d.loc,
+            ..._loc,
             titulo: d.title
         }
     });
+
 
     const tags = Array.from(new Set(data.map(d => d.tags.map(f=> `${f.value}`)).flat()));
 

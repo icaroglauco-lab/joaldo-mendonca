@@ -1,6 +1,25 @@
+<script context="module">
+  export async function load({ page, fetch }){
+    const url = `/propriedades/${page.params.slug}.json`;
+    const res = await fetch(url);
+
+    if(res.ok){
+      return{
+        props: {
+          data: await res.json()
+        }
+      }
+    }
+
+    return {
+      status: res.status,
+      error: new Error('!Erro de carregamento de propriedades/slug.json')
+    }
+  }
+</script>
+
 <script>
 	import Heading from '$lib/heading.svelte';
-  // Componente searchbar feito!
   import PropertyFlipper from "$lib/flipper.svelte" 
   import PropertyContent from "$lib/propertyContent.svelte";
 
@@ -28,8 +47,8 @@
 </script>
 
 
-<Heading msg={`Você está visualizando uma propriedade: ${data.title}`}/>
+<Heading msg={`Você está visualizando uma propriedade: ${data.titulo}`}/>
 
 
-<PropertyFlipper data={data} onFlip={HideUpperNavBar} hsize={`98`} zoom={14} full={false} descVisible={true}></PropertyFlipper>
+<PropertyFlipper data={data} onFlip={HideUpperNavBar} hsize={`98`} zoom={14} full={false} descVisible={false}></PropertyFlipper>
 <PropertyContent data={data}/>

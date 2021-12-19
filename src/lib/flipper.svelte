@@ -8,7 +8,7 @@
   export let hPreenchimento = "0rem";
   export let zoom = 14
 
-  let {photos, title, loc} = data;
+  let {fotos, titulo, loc} = data;
 
   export let hsize = "99";
   let minimizedCss = "transform: scale(0.1); z-index:20; border: 50px solid rgba(0, 72, 208, 0.24)"
@@ -43,7 +43,7 @@
     <div class="absolute w-full sm:w-96 top-0 md:top-auto md:bottom-10 text-center align-middle py-5 pl-0 mx-auto sm:pl-20 z-30 text-xl font-hero" 
          style={`background-color: #001B2EF0;
                  color: #FFE9B3;`}>
-      {title}
+      {titulo}
       {#if descVisible}
           <p>
             {data.desc}
@@ -55,9 +55,9 @@
     <MapView loc={loc} styles={MapViewCss} onclick={() => viewMap = false} zoom={zoom}/>
     <!-- galeria de imagens -->
     <div style={GaleryCss} class={GaleryClass} >
-        {#each photos as image, i}
+        {#each fotos as image, i}
           <div id={`img${i+1}`} class="w-full mx-auto carousel-item" >
-            <img class='w-full object-cover' src={image} alt="" on:click={() => viewMap = !viewMap}>
+            <img class='w-full object-cover' src={image.foto} alt="" on:click={() => viewMap = !viewMap}>
           </div>
         {/each}
     </div>
@@ -68,7 +68,7 @@
                 left: 50%; transform-origin: center;
                 transform: ${viewMap? "scale(1) translateX(-50%)": "scale(0)"};`}
     >
-      {#each photos as image, i}
+      {#each fotos as image, i}
         <a href={`#img${i+1}`} class="btn btn-xs btn-circle">{i+1}</a> 
       {/each}
       
@@ -77,8 +77,8 @@
     {#if full}
       <div id="thumbs" class="absolute z-40 right-0 h-full flex flex-col justify-end" 
            style="width: 10%; bottom: 12%; ">
-        {#each photos as photo,i}
-          <a href={`#img${i+1}`}><img src={photo} class="object-cover" style="box-sizing: border-box; border: 5px solid rgb(168, 185, 218)"></a>
+        {#each fotos as photo,i}
+          <a href={`#img${i+1}`}><img src={photo.foto} class="object-cover" style="box-sizing: border-box; border: 5px solid rgb(168, 185, 218)"></a>
         {/each}
       </div>
     {/if}
