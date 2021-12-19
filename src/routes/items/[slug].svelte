@@ -8,7 +8,8 @@
     if(res.ok){
       return{
         props: {
-          data: await res.json()
+          cat: page.params.slug,
+          data: (await res.json()).filter(d => d.cat === page.params.slug)
         }
       }
     }
@@ -23,6 +24,7 @@
 <script>
     import Items from '$lib/items column.svelte'
   
+    export let cat = "";
     export let data = [
       {
         "title": "Título Placeholder",
@@ -100,13 +102,13 @@
           text-4xl 
           mix-blend-difference 
           transition
-          font-logo text-secondary z-30 absolute 
+          font-logo text-secondary absolute 
           top-6 right-32 
-          subpixel-antialiased`}>
+          subpixel-antialiased`} style="z-index:100">
         <div class="relative">
           Joaldo Mendonça
           <br/>
-          <small class="float-right pr-10 font-hero" >Imóveis Urbanos</small>
+          <small class="float-right pr-10 font-hero" >{cat}</small>
           <img src="/logo.png" class="h-36 absolute -right-24 top-2 mix-blend-difference" alt="">
         </div>
       </div>  

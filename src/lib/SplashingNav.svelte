@@ -26,11 +26,11 @@
             overflow: visible;
         `}>
 
-            <a href="/" class="">Loteamentos Rurais</a>
-            <a href="/" class="">Propriedades Urbanas</a>
-            <a href="/" class="">Aluguel</a>
-            <a href="/" class="">Sobre</a>
-            <a href="/" class="">Contato</a>
+            <a href="/items/Chacreamento rural" class="">Chacreamento Rural</a>
+            <a href="/Urbano Venda" class="">Propriedades Urbanas</a>
+            <a href="/Urbano Aluguel" class="">Aluguel</a>
+            <a href="/sobre" class="">Sobre</a>
+            <a href="/contato" class="">Contato</a>
 
 
         <div style={`    

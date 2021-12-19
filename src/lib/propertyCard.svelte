@@ -1,4 +1,6 @@
 <script type="text/javascript">
+import { assign } from "svelte/internal";
+
   export let data;
   export let classes= "";
   export let onClick= ()=> {}
@@ -7,7 +9,7 @@
   console.log(data)
 </script>
 
-  <div class={`w-96 h-72 relative z-10 m-1 ${classes}`} on:click={onClick} on:focus={hoverEffect} on:mouseover={hoverEffect}>
+  <div class={`w-96 h-72 relative z-10 m-1 ${classes}`} on:click={() => window.location.assign(`/p/${data.slug}`)} on:focus={hoverEffect} on:mouseover={hoverEffect}>
       <img src={data.fotos[0].foto}
       alt={data.titulo}
       class="object-cover h-full" style="background-color: #eee">
