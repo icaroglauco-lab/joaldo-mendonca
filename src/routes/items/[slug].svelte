@@ -3,13 +3,21 @@
     const url = `/propriedades.json`;
     const res = await fetch(url);
 
-    
+    let json_data = await res.json();
+    let tags = Array.from(page.query.getAll('tags'));
+
+    json_data = json_data.filter(d => d.cat === page.params.slug);
+
+    if(tags.lenght>0){
+      json_data = json_data.filter(d => tags.includes(d.tags.map(tag => tag.value)));
+    }
 
     if(res.ok){
       return{
         props: {
           cat: page.params.slug,
-          data: (await res.json()).filter(d => d.cat === page.params.slug)
+          tags,
+          data: json_data
         }
       }
     }

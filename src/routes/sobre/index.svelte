@@ -1,9 +1,11 @@
 
 
-<div class="navbar mt-6 mb-2 bg-transparent text-neutral-content justify-between flex items-start">
+<div class="navbar mb-2 bg-transparent text-neutral-content justify-between flex items-start">
 
 
-    <div class="flex-none mr-36 mt-12 -mb-20 relative">
+    <div class="flex-none mr-36 mt-12 -mb-20 relative" style="
+        margin-left: auto;
+        margin-right: 32px;">
         <a href="/"><img src="/logo.png" id="logo" class="w-64 ml-20" alt="Logo"></a>
       </div> 
   </div>

@@ -1,3 +1,7 @@
+<script>
+  export let tags = []
+</script>
+
 <nav class="w-full h-30 flex flex-row flex-nowrap justify-between shadow px-5 py-2  font-body">
     <div id="fields flex flex-wrap ">
             
@@ -6,7 +10,7 @@
         <input type="text" placeholder="Ex: Aluguel, Vitória da Conquista..." class="input w-full input-bordered rounded-none">
       </div>        
 
-      <div class="inline-block mr-2 mb-2">
+      <!-- <div class="inline-block mr-2 mb-2">
         <select class="select select-info w-full max-w-xs rounded-none">
           <option disabled="disabled" selected="selected">Por categoria</option> 
           <option>telekinesis</option> 
@@ -22,7 +26,7 @@
           <option>time travel</option> 
           <option>invisibility</option>
         </select>        
-      </div>
+      </div> -->
 
     </div>
 
